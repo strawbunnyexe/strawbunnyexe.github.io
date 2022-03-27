@@ -13,9 +13,7 @@ body{
     color: #03010f;
 }
 h1,h2,h3,h4,h5,h6{
-    /* text-align: center; */
     color: #220f33;
-    margin: 8px;
 }
 nav{
     background-color: #af7795;
@@ -32,46 +30,45 @@ header{
     background-repeat: no-repeat;
     background-size: cover;
     border-bottom: 2px solid #0C1345;
-    /* Content and text display */
+}
+#info{
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    text-align: center;
     display: flex;
-    flex-flow: row-reverse wrap;
+    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
     align-content: center;
     gap: 40px;
-
-}
-
-@media screen and (min-width: 900px) {
-    header{
-        flex-flow: row-reverse nowrap;
-        gap: 60px;
-    }
-}
-
-main{
-    margin: 1rem 20px;
 }
 
 /* About section styles */
 #about{
-    margin: 1rem 20px;
+    margin: 5vw;
     background-color: #A5878F;
     border: 2px solid #0C1345;
     border-radius: 2em;
     padding: 10px;
-    margin: 2em 0;
 }
 #wrapper{
     display: flex;
     flex-flow: column nowrap;
     margin: 2em;
-    gap: 20px;
+    gap: 40px;
 }
 #wrapper img{
     width: 100%;
     height: auto;
 }
+.bttnLink{
+    border: 2px solid #0c081C;
+    border-radius: 1em;
+    padding: 10px;
+    background-color: #bba9ae;
+}
+
 @media screen and (min-width: 900px) {
     #wrapper{
         display: grid;
@@ -79,18 +76,17 @@ main{
         grid-template-rows: 1fr;
         grid-template-columns: 1fr 1fr;
         align-items: center;
-        column-gap: 60px;
+        column-gap: 80px;
     }
 }
 
 /* Project section styles */
 #projects{
-    margin: 1rem 20px;
     background-color: #A5878F;
     border: 2px solid #0C1345;
     border-radius: 2em;
     padding: 2em;
-    margin: 2em 0;
+    margin: 4vh 2vw;
 }
 
 .project1,.project2,.project3,.project4{
@@ -103,6 +99,8 @@ main{
 .project1 img,.project2 img,.project3 img,.project4 img{
     width: 100%;
     height: auto;
+    border: 2px solid #03010f;
+    border-radius: 5px;
 }
 @media screen and (min-width:900px){
     .project1,.project2,.project3,.project4{
@@ -117,7 +115,7 @@ main{
 /* Footer styles */
 footer{
     height: 180px;
-    padding-top: 20px;
+    padding-top: 40px;
     background-color: #af7795;
     text-align: center;
     border-top: 2px solid #0C1345;
@@ -133,6 +131,7 @@ footer{
 }
 .contactInfo a{
     font-size: 30px;
+    padding: 5px;
 }
 
 hr{
@@ -143,6 +142,10 @@ hr{
 a { text-decoration: none; }
 a:link { color: #0c081C; }
 a:visited { color: #0c081C; }
-a:focus { color: #f31076; }
-a:hover { color: #f31076; }
+a:focus { color: #f31076;}
+a:hover { color: #f31076;}
 a:active { color: #ff0073; }
+
+.bttnLink:hover{
+    background-color: #ecd4da8e;
+}
