@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap" rel="stylesheet">
     <!--Font Awesome Icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--Stylesheet-->
@@ -20,16 +23,25 @@
     <title>Jennifer Pichardo</title>
 </head>
 <body>
+    <!--Header Banner and Tag-->
+    <header>
+        <div>
+        <h1>Jennifer Pichardo</h1>
+        <h1>Game Developer & Artist</h1>
+        </div>
+    </header>
+
     <!--Navigation Bar-->
-    <nav class="navbar navbar-light fixed-top navbar-expand-md">
+    <nav role="navigation" class="navbar navbar-light sticky-top navbar-expand-sm">
         <div class="container-fluid">
-            <!--Replace Image Later-->
-            <a class="navbar-brand" href="#"><img src = "media/rabbit.png" alt = "" height="25px"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarText">
+            <div class="collapse navbar-collapse justify-content-center" id="navbarText">
                 <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#about">About</a>
                 </li>
@@ -46,19 +58,6 @@
         </div>
     </nav>
 
-    <!--Header Banner and Tag-->
-    <header>
-            <div id="info">
-            <div>
-            <img src="media/profile.png" alt = "" width="200px">
-            </div>
-            <div>
-                <h1>Jennifer Pichardo</h1>
-                <h2>Game Developer | Illustrator</h2>
-            </div>
-            </div>
-    </header>
-
     <main>
         <!--About section-->
         <section id = "about">
@@ -67,7 +66,7 @@
             <h2>About Me</h2>
             <p>Hello! My name is Jennifer Pichardo. I'm an aspiring game developer from Yonkers, New York. I currently study Game Design and Development at Rochester Institute of Technology. My passion has always been video games and I love working on projects that challenge me and improve my skills. I consider it a job well done when I see that people enjoy the work I do.</p>
             <p>When I'm not working, I'm most likely drawing fanart or original characters and posting them on my social media. You'll also find me playing games, mainly RPGs and adventure games.</p>
-            <a class = "bttnLink" href = "media/resume.pdf">Resume</a>
+            <a role="button" class = "btn btn-outline-dark" href = "media/resume.pdf">Click me to see my resume!</a>
             </div>
             <div>
                 <img src="media/profile.png" alt ="">
@@ -84,7 +83,7 @@
             <div>
             <h3>Calamity Witch</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis voluptatum iste aperiam sapiente minus velit nostrum facilis pariatur possimus, quia quidem tenetur cumque soluta rem dicta dolore, obcaecati et alias vitae rerum nemo earum fugit ducimus beatae. Debitis, illum error!</p>
-            <a class = "bttnLink" href = "https://github.com/strawbunnyexe/Calamity-Witch">Check out on GitHub!</a>
+            <a role="button" class = "btn btn-outline-dark" href = "https://github.com/strawbunnyexe/Calamity-Witch">Check out on GitHub!</a>
             </div>
             </div>
             <hr>
@@ -94,7 +93,7 @@
                 <div>
                 <h3>Run Larry Run!</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis voluptatum iste aperiam sapiente minus velit nostrum facilis pariatur possimus, quia quidem tenetur cumque soluta rem dicta dolore, obcaecati et alias vitae rerum nemo earum fugit ducimus beatae. Debitis, illum error!</p>
-                <a class = "bttnLink" href = "https://github.com/strawbunnyexe/Run-Larry-Run">Check out on GitHub!</a>
+                <a role="button" class = "btn btn-outline-dark" href = "https://github.com/strawbunnyexe/Run-Larry-Run">Check out on GitHub!</a>
                 </div>
             </div>
             <hr>
@@ -123,9 +122,9 @@
     <footer id = "contact">
         <h2>Contact</h2>
         <div class = "contactInfo">
+            <a href="mailto:jnp5616@rit.edu"><i class="fas fa-envelope"></i></a>
             <a href="https://linkedin.com/in/jennifer-pichardo"><i class="fab fa-linkedin"></i></a>
             <a href="https://github.com/strawbunnyexe"><i class="fab fa-github"></i></a>
-            <a href="mailto:jnp5616@rit.edu"><i class="fas fa-envelope"></i></a>
             <a href="https://strawbunnyexe.itch.io/"><i class="fab fa-itch-io"></i></a>
             <a href="https://www.artstation.com/strawbunnyexe"><i class="fab fa-artstation"></i></a>
         </div>
