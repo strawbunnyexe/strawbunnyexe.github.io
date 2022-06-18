@@ -1,6 +1,6 @@
 html{
     scroll-behavior: smooth;
-    scroll-padding-top: 70px;
+    scroll-padding-top: 60px;
 }
 body{
     padding: 0;
@@ -8,7 +8,7 @@ body{
     font-family: 'Josefin Slab', serif;
     color: #010317;
     background-color: #ed9e9e;
-    background-image:  radial-gradient(#f3dce1 1.2px, transparent 1.2px), radial-gradient(#f3dce1 1.2px, #ed9e9e 1.2px);
+    background-image:  radial-gradient(#f3dce1 2.2px, transparent 2.2px), radial-gradient(#f3dce1 2.2px, #ed9e9e 2.2px);
     background-size: 44px 44px;
     background-position: 0 0,22px 22px;
 }
@@ -28,7 +28,7 @@ nav{
 
 /* Header styles */
 header{
-    height: 45vh;
+    height: 25vh;
     background-color: #ad77ac;
     border-bottom: 2px solid #0b1354;
     display: flex;
@@ -40,7 +40,7 @@ header{
 
 /* About section styles */
 #about{
-    margin: 5vw;
+    margin: 4vh 6vw;
     background-color: #ebe6dc;
     border: 2px solid #0b1354;
     border-radius: 2em;
@@ -55,8 +55,6 @@ header{
 #wrapper img{
     width: 100%;
     height: auto;
-    border: 2px solid #0b1354;
-    border-radius: 50%;
 }
 
 @media screen and (min-width: 900px) {
@@ -72,18 +70,17 @@ header{
 
 /* Project section styles */
 #projects{
-    margin: 4vh 2vw;
     background-color: #ebe6dc;
     padding: 20px;
-    border: 2px solid #0b1354;
-    border-radius: 2em;
+    margin-top: 40px;
+    border-top: 2px solid #0b1354;
 }
 
 .project{
     display: flex;
     flex-flow: column nowrap;
     gap: 20px;
-    margin: 2em 4px;
+    margin: 2em 10px;
     align-items: center;
 }
 .project img{
