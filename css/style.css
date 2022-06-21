@@ -20,7 +20,6 @@ h1,h2,h3,h4,h5,h6{
 }
 nav{
     background-color: #81a954;
-    border-bottom: 2px solid #0b1354;
 }
 .navbar-light .navbar-nav .nav-link{
     color: #010317;
