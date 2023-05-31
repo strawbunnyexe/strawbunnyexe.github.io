@@ -118,7 +118,6 @@ section h2{
     height: 350px;
     background-color: #573955;
     color: #f4e5e0;
-    border-top: 2px solid #211b1b;
     border-bottom: 2px solid #211b1b;
     display: grid;
     grid-template-columns: auto;
@@ -146,20 +145,86 @@ section h2{
 }
 /* About section styles */
 #about{
+    text-align: center;
     background-color: #DEB1AC;
     padding: 10px;
 }
 #wrapper{
     display: flex;
     flex-flow: column nowrap;
+    align-items: center;
     margin: 2em;
     gap: 40px;
 }
 #wrapper img{
+    border: 2px solid black;
     width: 100%;
     height: auto;
 }
+.ba-container {
+  width: 400px;
+}
 
+.ba-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.ba-slider img {
+  width: 100%;
+  display: block;
+}
+
+.resize {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
+}
+
+.handle {
+  /* Thin line seperator */
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  margin-left: -2px;
+  background: #eeeaeac3;
+  cursor: ew-resize;
+}
+
+.handle:after {
+  /* Big knob  */
+  position: absolute;
+  top: 50%;
+  width: 32px;
+  height: 32px;
+  margin: -16px 0 0 -16px;
+  content: '\21ff';
+  color: #f1eff4;
+  
+  font-weight:bold;
+  font-size: 16px;
+  text-align: center;
+  line-height: 32px;
+  background-color: #1f1c1e;
+  
+  border: 1px solid #151215;
+  
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.draggable:after {
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  line-height: 16px;
+  font-size: 8px;
+}
 /* Project section styles */
 #projects{
     background-color: #DEB1AC;
@@ -168,6 +233,7 @@ section h2{
 }
 
 .project{
+    text-align: center;
     display: flex;
     flex-flow: column nowrap;
     gap: 20px;
@@ -222,7 +288,6 @@ hr{
         z-index: 2;
 	}
 	main {
-		padding-top: 8rem;
         margin: 0;
 	}
 	.sidebar {
@@ -249,14 +314,6 @@ hr{
     }
 }
 @media screen and (min-width:980px){
-    #wrapper{
-        display: grid;
-        margin: 2em 10%;
-        grid-template-rows: 1fr;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        column-gap: 80px;
-    }
     #banner{
         display: grid;
         grid-template-columns: 2fr 1fr;
@@ -268,6 +325,16 @@ hr{
         text-align: left;
     }
 } 
+@media screen and (min-width:1280px){
+    #wrapper{
+        display: grid;
+        margin: 2em 10%;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        column-gap: 80px;
+    }
+}
 .button{
     background-color: #834A5F;
     color: #ECD2C8;
