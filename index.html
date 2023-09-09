@@ -5,26 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Jennifer Pichardo's game developer portfolio.">
-    <!--Bootstrap CSS Stylesheet-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Glass+Antiqua&amp;family=Sunflower:wght@300&amp;display=swap" rel="stylesheet">
     <!--Font Awesome Icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <!--Favicon-->
-    <link rel="apple-touch-icon" sizes="180x180" href="media/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
-    <link rel="manifest" href="media/site.webmanifest">
     <!--Stylesheet-->
     <link rel="stylesheet" href="css/style.css">
-    <!--Bootstrap JavaScript-->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    <!--JQuery-->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!--JavaScript-->
+    <script src="js/main.js"></script>
     <title>Jennifer Pichardo | Game Developer & Artist</title>
 </head>
 <body>
@@ -65,20 +55,14 @@
         <section id = "about">
             <div id = "wrapper">
             <div>
-            <h2>About</h2>
-            <p>Hello! My name is Jennifer Pichardo (they/them) and I'm a game developer from New York. I'm currently studying Game Design and Development at Rochester Institute of Technology. Here, you can find out more about projects that I have worked on, as a programmer and artist.</p>
-            <p>When I'm not working, I'm most likely drawing fanart or original characters and posting them on my social media. You'll also find me playing games, mainly RPGs and adventure games. My favorite games are Pokemon, Kingdom Hearts, Earthbound, and Ace Attorney.</p>
+                <h2>About</h2>
+                <p>Hello! My name is Jennifer Pichardo (they/them) and I'm a game developer from New York. I'm currently studying Game Design and Development at Rochester Institute of Technology. Here, you can find out more about projects that I have worked on, as a programmer and artist.</p>
+                <p>When I'm not working, I'm most likely drawing fanart or original characters and posting them on my social media. You'll also find me playing games, mainly RPGs and adventure games. My favorite games are Pokemon, Kingdom Hearts, Earthbound, and Ace Attorney.</p>
             </div>
             <!--Image Slider-->
-            <div class="ba-container">
-                <div class="ba-slider">
-                  <img src="media/profile.jpg" alt="">       
-                  <div class="resize">
-                    <img src="media/profile.jpg" alt="">
-                  </div>
-                  <span class="handle"></span>
-                </div>
-                </div>
+            <div>
+                <img src="media/profile.jpg" alt=""> 
+            </div>
             </div>
         </section>
 
@@ -91,28 +75,29 @@
             <div class="project">
                 <img src="media/gif-finder.png" alt ="GIF Finder Website screenshot">
                 <div>
-                <h3>GIF Finder</h3>
-                <p>A GIF finder website using the GIPHY API. Search through their library of GIFs easily by using this simple site. I programmed the entire project using HTML, CSS, and JavaScript in the span of 2-3 weeks. I also created UI/UX mockups for the interface in order to implement an appealing design that is both user-friendly and responsive to many devices.</p>
-                <a class="button" role="button" href = "https://github.com/strawbunnyexe/gif-finder">Check it out on GitHub!</a>
-                <a class="button" role="button" href = "https://strawbunnyexe.github.io/gif-finder/">Try it out yourself!</a>
+                    <h3>GIF Finder</h3>
+                    <p>A GIF finder website using the GIPHY API. Search through their library of GIFs easily by using this simple site. I programmed the entire project using HTML, CSS, and JavaScript in the span of 2-3 weeks. I also created UI/UX mockups for the interface in order to implement an appealing design that is both user-friendly and responsive to many devices.</p>
+                    <a class="button" role="button" href = "https://github.com/strawbunnyexe/gif-finder">Check it out on GitHub!</a>
+                    <a class="button" role="button" href = "https://strawbunnyexe.github.io/gif-finder/">Try it out yourself!</a>
                 </div>
             </div>
             <hr>
+
             <div class = "project">
-            <img src="media/witch.png" alt ="Calamity Witch screenshot">
-            <div>
-            <h3>Calamity Witch</h3>
-            <p>Play as a clumsy witch who has to defeat monsters with a variety of elemental spells you can use in this top down survival arcade style game. An academic project created in Visual Studio with C# and MonoGame. I provided the initial pitch of the gameplay and overall design and further expanded upon it with a team of 5 people. I helped designed and developed aspects of the AI and other gameplay mechanics.</p>
-            <a class="button" role="button" href = "https://github.com/strawbunnyexe/Calamity-Witch">Check it out on GitHub!</a>
-            </div>
+                <img src="media/witch.png" alt ="Calamity Witch screenshot">
+                <div>
+                    <h3>Calamity Witch</h3>
+                    <p>Play as a clumsy witch who has to defeat monsters with a variety of elemental spells you can use in this top down survival arcade style game. An academic project created in Visual Studio with C# and MonoGame. I provided the initial pitch of the gameplay and overall design and further expanded upon it with a team of 5 people. I helped designed and developed aspects of the AI and other gameplay mechanics.</p>
+                    <a class="button" role="button" href = "https://github.com/strawbunnyexe/Calamity-Witch">Check it out on GitHub!</a>
+                </div>
             </div>
             <hr>
             <div class="project">
                 <img src="media/larry.png" alt ="Run Larry Run screenshot">
                 <div>
-                <h3>Run Larry Run!</h3>
-                <p>An infinte runner game where you play as a lizard named Larry, running away from captivity. The player must avoid obstacles to run further down the path and getting a higher score. I was the group leader of a team of 5, working upon the overall design of the game in a span of a few months. With my team, we worked together to design the entire UI, class structure, and gameplay. I also programmed an external Game Object creation tool to manipulate the spawning of certain obstacles in the game, using Visual Studio and C#.</p>
-                <a class="button" role="button" href = "https://github.com/strawbunnyexe/Run-Larry-Run">Check it out on GitHub!</a>
+                    <h3>Run Larry Run!</h3>
+                    <p>An infinte runner game where you play as a lizard named Larry, running away from captivity. The player must avoid obstacles to run further down the path and getting a higher score. I was the group leader of a team of 5, working upon the overall design of the game in a span of a few months. With my team, we worked together to design the entire UI, class structure, and gameplay. I also programmed an external Game Object creation tool to manipulate the spawning of certain obstacles in the game, using Visual Studio and C#.</p>
+                    <a class="button" role="button" href = "https://github.com/strawbunnyexe/Run-Larry-Run">Check it out on GitHub!</a>
                 </div>
             </div>
         </section>
@@ -128,10 +113,8 @@
         </div>
     </footer>
     </main>
+    
     </div>
-
-    <!--JavaScript-->
-    <script src="js/main.js"></script>
 
 </body>
 </html>

@@ -1,9 +1,6 @@
 *{
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
 }
-
 html{
     scroll-behavior: smooth;
     scroll-padding-top: 10px;
@@ -12,7 +9,10 @@ body{
     font-family: 'Sunflower', serif;
     color: #0b080e;
     background-color: #AF5B68;
+    margin: 0;
+    padding: 0;
 }
+
 .app{
     display: flex;
     min-height: 100vh;
@@ -89,7 +89,9 @@ h1,h2,h3,h4,h5,h6{
 .sidebar .menu {
 	margin: 6rem -1rem;
 }
-
+.sidebar .menu h3{
+    font-size: 30px;
+}
 .sidebar .menu .menu-item {
 	display: block;
 	padding: 1em;
@@ -158,73 +160,10 @@ section h2{
 }
 #wrapper img{
     border: 2px solid black;
-    width: 100%;
+    max-width: 350px;
     height: auto;
 }
-.ba-container {
-  width: 400px;
-}
 
-.ba-slider {
-  position: relative;
-  overflow: hidden;
-}
-
-.ba-slider img {
-  width: 100%;
-  display: block;
-}
-
-.resize {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 50%;
-  overflow: hidden;
-}
-
-.handle {
-  /* Thin line seperator */
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  margin-left: -2px;
-  background: #eeeaeac3;
-  cursor: ew-resize;
-}
-
-.handle:after {
-  /* Big knob  */
-  position: absolute;
-  top: 50%;
-  width: 32px;
-  height: 32px;
-  margin: -16px 0 0 -16px;
-  content: '\21ff';
-  color: #f1eff4;
-  
-  font-weight:bold;
-  font-size: 16px;
-  text-align: center;
-  line-height: 32px;
-  background-color: #1f1c1e;
-  
-  border: 1px solid #151215;
-  
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-.draggable:after {
-  width: 16px;
-  height: 16px;
-  margin: -8px 0 0 -8px;
-  line-height: 16px;
-  font-size: 8px;
-}
 /* Project section styles */
 #projects{
     background-color: #DEB1AC;
@@ -299,7 +238,6 @@ hr{
 		max-width: 300px;
 		transition: 0.2s linear;
 	}
-
 	.sidebar.is-active {
 		left: 0;
 	}
@@ -308,9 +246,9 @@ hr{
 @media screen and (min-width:920px){
     .project{
         display: grid;
-        grid-template-columns: 2fr 3fr;
-        grid-template-rows: 1fr;
-        gap: 40px;
+        grid-template-columns: 1fr 1.5fr;
+        grid-template-rows: auto;
+        gap: 2em;
     }
 }
 @media screen and (min-width:980px){
@@ -336,8 +274,10 @@ hr{
     }
 }
 .button{
+    display: inline-block;
     background-color: #834A5F;
     color: #ECD2C8;
+    margin: 8px;
     padding: 12px;
     border-radius: 2rem;
     border: 2px solid #0b080e;
