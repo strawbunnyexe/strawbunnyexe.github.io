@@ -77,7 +77,7 @@ h1,h2,h3,h4,h5,h6{
 	flex: 1 1 0;
 	width: 300px;
 	padding: 4rem 3rem;
-	background-color: #AF5B68;
+	background-color: #a7515e;
     border-right: 2px solid #211b1b;
     position: fixed;
     height: 100vh;
@@ -91,11 +91,12 @@ h1,h2,h3,h4,h5,h6{
 }
 .sidebar .menu h3{
     font-size: 30px;
+    color: #f9d9d9;
 }
 .sidebar .menu .menu-item {
 	display: block;
 	padding: 1em;
-	color: #f4e5e0;
+	color: #fcfbfa;
 	text-decoration: none;
 	transition: 0.2s linear;
 }
@@ -286,6 +287,6 @@ hr{
 a { text-decoration: none; }
 a:link { color: #ECD2C8; }
 a:visited { color: #ECD2C8; }
-a:focus { color: #ec4653;}
-a:hover { color: #ec4653;}
-a:active { color: #ec4653; }
+a:focus { color: #ffb3ba;}
+a:hover { color: #ffb3ba;}
+a:active { color: #ffb3ba; }
