@@ -1,49 +1,46 @@
 /* General Contact Section Styles */
 #contact {
-    padding: 60px 20px;
-    /* Off-White */
+    padding: 50px 20px;
     color: #2C3E50;
-    /* Dark Purple */
     text-align: center;
 }
 
 #contact h2 {
     font-size: 2.5rem;
-    color: #472357;
+    color: #f1edf4;
     text-transform: uppercase;
-    /* Violet Blue */
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
 }
 
 /* Contact Container (form and social links) */
 .contact-container {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 50px;
+    justify-content:space-between;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Contact Form */
-.contact-form {
-    width: 100%;
-    max-width: 500px;
-    background-color: #F4F6F7;
-    /* Light Off-white */
-    padding: 30px;
+.contact-form, .social-links {
+    flex: 1;
+    padding: 20px 10px;
+    background: #fff;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.4);
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+  }
 
 .contact-form h3 {
-    font-size: 1.8rem;
-    color: #9B59B6;
-    /* Lavender Purple */
+    font-size: 32px;
+    color: #9b59b6;
     margin-bottom: 20px;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
 }
 
 .contact-form label {
     font-size: 1rem;
-    color: #7F8C8D;
-    /* Dark Gray */
+    color: #3c4242;
     margin-bottom: 5px;
     display: block;
 }
@@ -54,12 +51,9 @@
     padding: 12px;
     margin-bottom: 20px;
     border: 1px solid #BDC3C7;
-    /* Light Gray */
     border-radius: 5px;
     background-color: #ECF0F1;
-    /* Off-White */
     color: #2C3E50;
-    /* Dark Purple */
     font-size: 1rem;
 }
 
@@ -71,7 +65,6 @@
 .contact-form button {
     font-family: "Press Start 2P", sans-serif;
     background-color: #F39C12;
-    /* Soft Pink */
     color: white;
     padding: 12px 20px;
     border: none;
@@ -83,7 +76,6 @@
 
 .contact-form button:hover {
     background-color: #9B59B6;
-    /* Lavender Purple */
 }
 
 /* Social Links */
@@ -93,8 +85,7 @@
 
 .social-links h3 {
     font-size: 1.8rem;
-    color: #562768;
-    /* Violet Blue */
+    color: #9b59b6;
     margin-bottom: 20px;
     text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
 }
@@ -110,8 +101,7 @@
 
 .social-links .social-icon {
     font-size: 1.2rem;
-    color: #2C3E50;
-    /* Dark Purple */
+    color: #191b1d;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -119,22 +109,38 @@
 
 .social-links .social-icon:hover {
     color: #9B59B6;
-    /* Lavender Purple */
 }
 
-/* Responsive Design */
+/* Responsive styles for smaller screens */
 @media (max-width: 768px) {
     .contact-container {
-        flex-direction: column;
-        align-items: center;
+      flex-direction: column;
     }
+  
+    .contact-form, .social-links {
+      width: 100%;
+    }
+  }
 
-    .contact-form {
-        max-width: 100%;
-        margin-bottom: 30px;
+@media (max-width: 480px) {
+    #contact h2 {
+      font-size: 2rem;
     }
-
-    .social-links {
-        max-width: 100%;
+  
+    .contact-form h3, .social-links h3 {
+      font-size: 1.5rem;
     }
-}
+  
+    .contact-form input, .contact-form textarea {
+      font-size: 0.9rem;
+    }
+  
+    .contact-form .submit-btn {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  
+    .social-links a {
+      font-size: 0.9rem;
+    }
+  }

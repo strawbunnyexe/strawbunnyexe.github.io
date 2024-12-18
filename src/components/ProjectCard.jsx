@@ -3,8 +3,8 @@ import React from 'react';
 
 const ProjectCard = ({ project }) => {
   return (
-    <div className={`project-card ${project.category}`}>
-      <img src={project.imgSrc} alt={project.title} />
+    <div className="project-card">
+      <img src={project.image} alt={project.title} />
       <h3>{project.title}</h3>
       <p>{project.description}</p>
       <a href={project.link} className="view-project">View Project</a>
@@ -13,3 +13,4 @@ const ProjectCard = ({ project }) => {
 };
 
 export default ProjectCard;
+

@@ -40,22 +40,22 @@ const Skills = () => {
 
   return (
     <section id="skills">
-      <h2>My Skills</h2>
+      <h2>Skills</h2>
 
       {/* Frontend Skills */}
       <div className="category">
         <h3>Frontend</h3>
         <div className="skills-row">
           <div className="skill">
-            <label htmlFor="html">HTML</label>
+            <label htmlFor="html">HTML/CSS</label>
             <progress id="html" value="90" max="100"></progress>
           </div>
           <div className="skill">
-            <label htmlFor="css">CSS</label>
-            <progress id="css" value="80" max="100"></progress>
+            <label htmlFor="js">JavaScript</label>
+            <progress id="js" value="75" max="100"></progress>
           </div>
           <div className="skill">
-            <label htmlFor="js">JavaScript</label>
+            <label htmlFor="js">TypeScript</label>
             <progress id="js" value="75" max="100"></progress>
           </div>
           <div className="skill">
@@ -78,8 +78,8 @@ const Skills = () => {
             <progress id="mongodb" value="75" max="100"></progress>
           </div>
           <div className="skill">
-            <label htmlFor="express">Express.js</label>
-            <progress id="express" value="70" max="100"></progress>
+            <label htmlFor="mongodb">Python</label>
+            <progress id="mongodb" value="50" max="100"></progress>
           </div>
         </div>
       </div>

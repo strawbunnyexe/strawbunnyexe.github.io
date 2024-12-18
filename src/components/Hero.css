@@ -1,13 +1,11 @@
 /* Hero Section */
 #hero {
-    padding: 40px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
-    height: 100vh;
-    /* Full-screen section */
-    background: linear-gradient(to bottom, #1a0023, #3b0045);
+    padding: 20px;
+    background: #f3f3f3;
+    position: relative;
     color: #fff;
     font-family: 'Press Start 2P', cursive;
     position: relative;
@@ -34,10 +32,10 @@
 
 .hero {
     position: relative;
-    margin-top: 0;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 60px);
     /* Subtract navbar height */
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     overflow: hidden;
     justify-content: center;
@@ -55,7 +53,7 @@
 
 .hero-title {
     font-family: 'Press Start 2P', cursive;
-    font-size: 24px;
+    font-size: 1.6rem;
     color: #fff;
     white-space: nowrap;
     overflow: hidden;
@@ -69,12 +67,6 @@
     50% {
         border-color: transparent;
     }
-}
-
-.hero-subtitle {
-    font-size: 1rem;
-    color: #fff;
-    margin-bottom: 30px;
 }
 
 .dialogue-box {
@@ -91,6 +83,7 @@
 
 .hero-buttons {
     display: flex;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -114,7 +107,7 @@
 }
 
 .hero-avatar img {
-    margin: 2rem;
+    margin: 1.2rem;
     width: 250px;
     height: 250px;
     image-rendering: pixelated;
@@ -151,10 +144,10 @@
 /* Scroll Arrow */
 .scroll-arrow .arrow {
     position: absolute;
-    bottom: 20px;
+    bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 24px;
+    font-size: 28px;
     color: #ffdf00;
     /* Retro yellow */
     text-shadow: 2px 2px 0 #000;
@@ -191,7 +184,28 @@
         font-size: 1.5rem;
     }
 
-    .hero-subtitle {
+    .dialogue-box {
         font-size: 0.9rem;
     }
 }
+
+@media (max-width: 480px) {
+    .hero-title {
+      font-size: 1.1rem; /* Further reduce title size */
+    }
+  
+    .dialogue-box {
+      font-size: 0.6rem; /* Further reduce text size */
+    }
+  
+    .hero-avatar img {
+      max-width: 150px; /* Avatar even smaller */
+    }
+    .hero-button {
+        font-size: 0.6rem;
+    }
+    .scroll-arrow .arrow {
+        bottom: 8px;
+        font-size: 18px;
+    }
+  }

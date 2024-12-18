@@ -1,0 +1,26 @@
+   [
+   {
+      "id": 1,
+      "title": "GIF Finder",
+      "description": "Test",
+      "category": "frontend",
+      "image": "/assets/images/gif-finder.png",
+      "link": "https://example.com/project1"
+    },
+    {
+      "id": 2,
+      "title": "Audio Visualizer",
+      "description": "Description of Project 2",
+      "category": "frontend",
+      "image": "assets/images/audio-visualizer.png",
+      "link": "https://example.com/project2"
+    },
+    {
+      "id": 3,
+      "title": "Project 3",
+      "description": "Description of Project 3",
+      "category": "game",
+      "image": "assets/images/witch.png",
+      "link": "https://example.com/project2"
+    }
+  ]

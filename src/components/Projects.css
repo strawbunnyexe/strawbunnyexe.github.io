@@ -10,10 +10,11 @@
   }
   
   #projects h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-transform: uppercase;
     color: #9b59b6;
     margin-bottom: 2rem;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
   }
   
   .project-categories {

@@ -14,12 +14,12 @@ const Footer = () => {
         <div className="footer-socials">
           <ul>
             <li>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/strawbunnyexe" target="_blank" rel="noopener noreferrer">
                 <FaGithub size={24} />
               </a>
             </li>
             <li>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://linkedin.com/in/jennifer-pichardo" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin size={24} />
               </a>
             </li>

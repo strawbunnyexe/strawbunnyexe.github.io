@@ -1,15 +1,13 @@
-import { useState } from 'react'
-import Header from "./assets/components/Header.jsx"
-import Hero from "./assets/components/Hero.jsx"
-import About from './assets/components/About.jsx'
-import Skills from './assets/components/Skills.jsx'
-import Projects from './assets/components/Projects.jsx'
-import Contact from './assets/components/Contact.jsx'
-import Footer from './assets/components/Footer.jsx'
+import Header from "./components/Header.jsx"
+import Hero from "./components/Hero.jsx"
+import About from './components/About.jsx'
+import Skills from './components/Skills.jsx'
+import Projects from './components/Projects.jsx'
+import Contact from './components/Contact.jsx'
+import Footer from './components/Footer.jsx'
 import './App.css'
 
 function App() {
-
   return (
     <>
       <Header />

@@ -53,7 +53,7 @@ const Contact = () => {
       <h2>Contact Me</h2>
       <div className="contact-container">
         <div className="contact-form">
-          <h3>Send me a Message</h3>
+          <h3>Send me a Message!</h3>
           <form onSubmit={handleSubmit}>
             <label htmlFor="name">Name</label>
             <input
@@ -94,8 +94,8 @@ const Contact = () => {
         <div className="social-links">
           <h3>Follow Me</h3>
           <ul>
-            <li><a href="https://github.com" target="_blank" className="social-icon">GitHub</a></li>
-            <li><a href="https://linkedin.com" target="_blank" className="social-icon">LinkedIn</a></li>
+            <li><a href="https://github.com/strawbunnyexe" target="_blank" className="social-icon">GitHub</a></li>
+            <li><a href="https://linkedin.com/in/jennifer-pichardo" target="_blank" className="social-icon">LinkedIn</a></li>
           </ul>
         </div>
       </div>

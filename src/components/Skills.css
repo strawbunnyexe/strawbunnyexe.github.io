@@ -7,10 +7,11 @@
 }
 
 #skills h2 {
-    font-size: 2.5rem;
+    font-size: 32px;
     margin-bottom: 2rem;
     text-transform: uppercase;
-    color: #26122e;
+    color: #f1edf4;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
 }
 
 .category {
@@ -24,6 +25,7 @@
     font-family: 'Press Start 2P', sans-serif;
     /* Change the color to suit the retro theme */
     margin-bottom: 15px;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
 }
 
 .skills-row {
