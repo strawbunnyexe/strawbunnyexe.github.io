@@ -1,0 +1,140 @@
+/* General Contact Section Styles */
+#contact {
+    padding: 60px 20px;
+    /* Off-White */
+    color: #2C3E50;
+    /* Dark Purple */
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    color: #472357;
+    text-transform: uppercase;
+    /* Violet Blue */
+}
+
+/* Contact Container (form and social links) */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+/* Contact Form */
+.contact-form {
+    width: 100%;
+    max-width: 500px;
+    background-color: #F4F6F7;
+    /* Light Off-white */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h3 {
+    font-size: 1.8rem;
+    color: #9B59B6;
+    /* Lavender Purple */
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    font-size: 1rem;
+    color: #7F8C8D;
+    /* Dark Gray */
+    margin-bottom: 5px;
+    display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 80%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #BDC3C7;
+    /* Light Gray */
+    border-radius: 5px;
+    background-color: #ECF0F1;
+    /* Off-White */
+    color: #2C3E50;
+    /* Dark Purple */
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: none;
+}
+
+.contact-form button {
+    font-family: "Press Start 2P", sans-serif;
+    background-color: #F39C12;
+    /* Soft Pink */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #9B59B6;
+    /* Lavender Purple */
+}
+
+/* Social Links */
+.social-links {
+    max-width: 300px;
+}
+
+.social-links h3 {
+    font-size: 1.8rem;
+    color: #562768;
+    /* Violet Blue */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
+}
+
+.social-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.social-links li {
+    margin-bottom: 10px;
+}
+
+.social-links .social-icon {
+    font-size: 1.2rem;
+    color: #2C3E50;
+    /* Dark Purple */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.social-links .social-icon:hover {
+    color: #9B59B6;
+    /* Lavender Purple */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-form {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .social-links {
+        max-width: 100%;
+    }
+}

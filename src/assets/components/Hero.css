@@ -1,0 +1,197 @@
+/* Hero Section */
+#hero {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    /* Full-screen section */
+    background: linear-gradient(to bottom, #1a0023, #3b0045);
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    position: relative;
+    overflow: hidden;
+    /* Keeps any overflow effects in check */
+    background: linear-gradient(135deg, #c084fc, #5e2e7a, #2b134f);
+    background-size: 400% 400%;
+    animation: hero-gradient 15s ease infinite;
+}
+
+@keyframes hero-gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hero {
+    position: relative;
+    margin-top: 0;
+    height: calc(100vh - 80px);
+    /* Subtract navbar height */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-family: 'Press Start 2P', sans-serif;
+    /* Pixel font for a retro feel */
+    z-index: 0;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 24px;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #fff;
+    /* Simulate cursor */
+    animation: blink 0.7s step-end infinite;
+    margin: 20px 0;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.dialogue-box {
+    background: #1a0023;
+    border: 4px solid #fff;
+    box-shadow: 4px 4px #5e2e7a;
+    padding: 15px;
+    display: inline-block;
+    font-family: 'Press Start 2P', cursive;
+    color: #c084fc;
+    max-width: 75%;
+    margin: 10px 0;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.hero-button {
+    background-color: #c084fc;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: 3px solid #5e2e7a;
+    box-shadow: 4px 4px #5e2e7a;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.hero-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 6px 6px #5e2e7a;
+    background-color: #5e2e7a;
+}
+
+.hero-avatar img {
+    margin: 2rem;
+    width: 250px;
+    height: 250px;
+    image-rendering: pixelated;
+    /* Keeps sharp edges */
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px #ff00ff;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* Typing animation for hero title */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* Scroll Arrow */
+.scroll-arrow .arrow {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: #ffdf00;
+    /* Retro yellow */
+    text-shadow: 2px 2px 0 #000;
+    animation: bounce 1.5s infinite ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Pixel Bounce Animation */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translate(-50%, 0);
+    }
+
+    50% {
+        transform: translate(-50%, 10px);
+    }
+}
+
+@media (max-width: 768px) {
+    #hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-avatar img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+}

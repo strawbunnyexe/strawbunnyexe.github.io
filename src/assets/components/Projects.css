@@ -1,0 +1,117 @@
+/* Projects Section Styles */
+#projects {
+  background-color: #F9F9FF;
+  /* Soft Lavender or Light Gray */
+  padding: 40px 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    text-align: center;
+  }
+  
+  #projects h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: #9b59b6;
+    margin-bottom: 2rem;
+  }
+  
+  .project-categories {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 10px; /* Add space between buttons */
+  }
+  
+  .category-btn {
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: #8E44AD;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    margin: 0 0.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .category-btn:hover {
+    background-color: #D4AC0D;
+  }
+  
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .project-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 1.5rem;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .project-card h3 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: #5f4b8b;
+  }
+  
+  .project-card p {
+    font-size: 1rem;
+    color: #7d6b9d;
+    margin: 1rem 0;
+  }
+  
+  .view-project {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #ff6fbf;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 1rem;
+  }
+  
+  .view-project:hover {
+    background-color: #9b59b6;
+  }
+  
+  .project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Small screen (mobile) */
+@media (max-width: 480px) {
+    .category-btn {
+      font-size: 0.9rem; /* Smaller font size for mobile */
+      padding: 6px 10px; /* Further adjust padding */
+    }
+    .project-categories {
+      flex-direction: column; /* Stack buttons vertically on mobile */
+      align-items: center;
+    }
+  }
+
+  /* Medium screen (tablets) */
+@media (max-width: 768px) {
+    .category-btn {
+      font-size: 1rem; /* Smaller font size for tablets */
+      padding: 8px 15px; /* Adjust padding for smaller screens */
+    }
+  }
+  
