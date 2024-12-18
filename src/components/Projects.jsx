@@ -20,9 +20,9 @@ const Projects = () => {
   };
 
   // Filtered projects based on selected category
-  const filteredProjects = projects.filter((project) => 
-    selectedCategory === "all" || project.category === selectedCategory
-  );
+  const filteredProjects = selectedCategory === 'all'
+  ? projects
+  : projects.filter(project => project.category === selectedCategory);
 
   return (
     <section id="projects">
@@ -30,10 +30,30 @@ const Projects = () => {
     
       {/* Category Filter Buttons */}
       <div className="project-categories">
-        <button className="category-btn" onClick={() => filterProjects("all")}>All</button>
-        <button className="category-btn" onClick={() => filterProjects("frontend")}>Frontend</button>
-        <button className="category-btn" onClick={() => filterProjects("backend")}>Backend</button>
-        <button className="category-btn" onClick={() => filterProjects("game")}>Game Dev</button>
+      <button
+          className={`category-btn ${selectedCategory === 'all' ? 'active' : ''}`}
+          onClick={() => filterProjects('all')}
+        >
+          All
+        </button>
+        <button
+          className={`category-btn ${selectedCategory === 'frontend' ? 'active' : ''}`}
+          onClick={() => filterProjects('frontend')}
+        >
+          Frontend
+        </button>
+        <button
+          className={`category-btn ${selectedCategory === 'backend' ? 'active' : ''}`}
+          onClick={() => filterProjects('backend')}
+        >
+          Backend
+        </button>
+        <button
+          className={`category-btn ${selectedCategory === 'game' ? 'active' : ''}`}
+          onClick={() => filterProjects('game')}
+        >
+          Game Dev
+        </button>
       </div>
     
       {/* Projects Grid */}

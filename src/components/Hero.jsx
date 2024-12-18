@@ -32,7 +32,7 @@ const Hero = () => {
         {/* Avatar */}
         <div className="hero-avatar">
           <img
-            src="https://placehold.co/400"
+            src="/assets/images/profile.jpg"
             alt="Pixel Avatar"
             className="avatar-img"
           />

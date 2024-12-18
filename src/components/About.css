@@ -24,7 +24,8 @@
 .avatar-img {
     width: 100%;
     height: auto;
-    border: 5px solid #c084fc;
+    border: 4px solid #fff;
+    box-shadow: 4px 2px #5e2e7a;
     image-rendering: pixelated;
 }
 
