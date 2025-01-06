@@ -5,24 +5,18 @@ body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 60px;
 }
 
 /* Parallax scrolling background */
 body {
   background: linear-gradient(to bottom, #725AC1, #AA76B5, #CFFCE8);
-  /* Cosmic Lavender Glow gradient */
   background-attachment: fixed;
-  /* Keeps the background fixed while scrolling */
   background-position: center center;
-  /* Keeps the background centered */
   background-repeat: no-repeat;
-  /* Prevents tiling */
   font-family: 'Press Start 2P', sans-serif;
   min-height: 100%;
-  /* Ensure it covers at least the entire viewport height */
   position: relative;
-  /* Make sure overlay is positioned correctly */
 }
 
 /* Simple pixel pattern using CSS */

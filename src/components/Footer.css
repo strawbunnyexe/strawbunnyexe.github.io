@@ -26,23 +26,24 @@
   }
   
   .footer-socials ul li {
-    margin-left: 20px; /* Add space between icons */
+    margin-left: 20px;
   }
   
   .footer-socials ul li a {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
   }
   
   .footer-socials ul li a:hover {
-    color: #3498db; /* Hover effect for icons */
+    color: #ff00ff;
   }
   
   .footer-socials ul li a svg {
-    transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+    transition: transform 0.3s ease-in-out;
   }
   
   .footer-socials ul li a:hover svg {
-    transform: scale(1.2); /* Slightly enlarge icon on hover */
+    transform: scale(1.2);
   }
   

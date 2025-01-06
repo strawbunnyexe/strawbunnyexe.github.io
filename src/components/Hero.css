@@ -1,65 +1,26 @@
 /* Hero Section */
-#hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background: #f3f3f3;
-    position: relative;
-    color: #fff;
-    font-family: 'Press Start 2P', cursive;
-    position: relative;
-    overflow: hidden;
-    /* Keeps any overflow effects in check */
-    background: linear-gradient(135deg, #c084fc, #5e2e7a, #2b134f);
-    background-size: 400% 400%;
-    animation: hero-gradient 15s ease infinite;
-}
-
-@keyframes hero-gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
 .hero {
     position: relative;
     height: calc(100vh - 60px);
-    /* Subtract navbar height */
+    padding-top: 60px;
     display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    overflow: hidden;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
-    font-family: 'Press Start 2P', sans-serif;
-    /* Pixel font for a retro feel */
+    color: #fff;
+    overflow: hidden;
     z-index: 0;
 }
 
-.hero-content {
-    max-width: 600px;
-}
-
 .hero-title {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     color: #fff;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 2px solid #fff;
-    /* Simulate cursor */
-    animation: blink 0.7s step-end infinite;
+    border-right: 3px solid #fff;
+    animation: typing 3s steps(12) infinite, blink 0.7s step-end infinite;
+    padding: 12px;
     margin: 20px 0;
 }
 
@@ -70,32 +31,34 @@
 }
 
 .dialogue-box {
-    background: #1a0023;
+    background: #333;
     border: 4px solid #fff;
     box-shadow: 4px 4px #5e2e7a;
-    padding: 15px;
+    padding: 15px 20px;
     display: inline-block;
-    font-family: 'Press Start 2P', cursive;
-    color: #c084fc;
-    max-width: 75%;
-    margin: 10px 0;
+    font-family: 'Press Start 2P', sans-serif;
+    color: #fff;
+    max-width: 80%;
+    margin: 20px 0;
 }
 
 .hero-buttons {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
+    margin: 20px 0;
 }
 
 .hero-button {
     background-color: #c084fc;
     color: #fff;
-    padding: 10px 20px;
-    font-size: 1rem;
+    padding: 10px 15px;
+    font-size: 1.1rem;
     border: 3px solid #5e2e7a;
     box-shadow: 4px 4px #5e2e7a;
     transition: all 0.2s ease;
     text-transform: uppercase;
+    text-decoration: none;
     cursor: pointer;
     margin-top: 20px;
 }
@@ -107,11 +70,9 @@
 }
 
 .hero-avatar img {
-    margin: 1.2rem;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     image-rendering: pixelated;
-    /* Keeps sharp edges */
     border: 3px solid #fff;
     box-shadow: 0 0 10px #ff00ff;
     animation: float 3s ease-in-out infinite;
@@ -142,21 +103,22 @@
 }
 
 /* Scroll Arrow */
-.scroll-arrow .arrow {
+.scroll-arrow {
     position: absolute;
-    bottom: 40px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 28px;
-    color: #ffdf00;
-    /* Retro yellow */
-    text-shadow: 2px 2px 0 #000;
     animation: bounce 1.5s infinite ease-in-out;
+}
+
+.scroll-arrow .arrow {
+    font-size: 2rem;
+    color: #ffdf00;
+    text-shadow: 2px 2px 0 #000;
     cursor: pointer;
     text-decoration: none;
 }
 
-/* Pixel Bounce Animation */
 @keyframes bounce {
 
     0%,
@@ -165,15 +127,11 @@
     }
 
     50% {
-        transform: translate(-50%, 10px);
+        transform: translate(-50%, -10px);
     }
 }
 
 @media (max-width: 768px) {
-    #hero {
-        flex-direction: column;
-        text-align: center;
-    }
 
     .hero-avatar img {
         width: 150px;
@@ -185,27 +143,40 @@
     }
 
     .dialogue-box {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
+        padding: 10px;
     }
 }
 
 @media (max-width: 480px) {
+    .hero {
+        height: auto;
+        padding-bottom: 50px;
+    }
+
     .hero-title {
-      font-size: 1.1rem; /* Further reduce title size */
+        font-size: 1rem;
     }
-  
+
     .dialogue-box {
-      font-size: 0.6rem; /* Further reduce text size */
-    }
-  
-    .hero-avatar img {
-      max-width: 150px; /* Avatar even smaller */
-    }
-    .hero-button {
         font-size: 0.6rem;
     }
-    .scroll-arrow .arrow {
-        bottom: 8px;
-        font-size: 18px;
+
+    .hero-avatar img {
+        width: 100px;
+        height: 100px;
     }
-  }
+
+    .hero-button {
+        padding: 8px 10px;
+        font-size: 0.7rem;
+    }
+
+    .scroll-arrow {
+        margin-top: 20px;
+    }
+
+    .scroll-arrow .arrow {
+        font-size: 20px;
+    }
+}
