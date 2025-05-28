@@ -3,7 +3,7 @@
       "id": 1,
       "title": "GIF Finder",
       "description": "",
-      "category": "frontend",
+      "category": "web",
       "image": "/assets/images/gif-finder.png",
       "liveLink": "https://jenniferpichardo.com/gif-finder/",
       "githubLink": "https://github.com/strawbunnyexe/gif-finder"
@@ -12,7 +12,7 @@
       "id": 2,
       "title": "Audio Visualizer",
       "description": "",
-      "category": "frontend",
+      "category": "web",
       "image": "assets/images/audio-visualizer.png",
       "link": "https://example.com/project2",
       "liveLink": "http://jenniferpichardo.com/audio-visualizer/",
@@ -29,10 +29,11 @@
     },
     {
       "id": 4,
-      "title": "Calamity Witch",
+      "title": "HedgeBall",
       "description": "",
       "category": "game",
-      "image": "assets/images/witch.png",
-      "githubLink": "https://github.com/strawbunnyexe/Calamity-Witch"
+      "image": "assets/images/hedge.png",
+      "liveLink": "https://moonrift.itch.io/moonjam-class-6",
+      "githubLink": "https://github.com/C0dingSteve/HedgeBall"
     }
   ]
