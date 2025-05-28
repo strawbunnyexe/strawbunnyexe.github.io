@@ -97,7 +97,7 @@ const Skills = () => {
             <progress id="csharp" value="80" max="100"></progress>
           </div>
           <div className="skill">
-            <label htmlFor="gameDesign">Game Design</label>
+            <label htmlFor="gameDesign">C++</label>
             <progress id="gameDesign" value="75" max="100"></progress>
           </div>
         </div>

@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-content">
-          <p>&copy; 2024 Jennifer Pichardo</p>
+          <p>&copy; 2025 Jennifer Pichardo</p>
         </div>
         
         <div className="footer-socials">

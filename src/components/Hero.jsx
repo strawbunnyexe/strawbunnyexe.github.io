@@ -10,7 +10,7 @@ const Hero = () => {
 
         {/* Dialogue Box */}
         <div className="dialogue-box">
-          <p>Programmer & Designer</p>
+          <p>Web & Game Developer</p>
         </div>
 
         {/* Buttons */}

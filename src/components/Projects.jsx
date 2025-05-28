@@ -37,16 +37,10 @@ const Projects = () => {
           All
         </button>
         <button
-          className={`category-btn ${selectedCategory === 'frontend' ? 'active' : ''}`}
-          onClick={() => filterProjects('frontend')}
+          className={`category-btn ${selectedCategory === 'web' ? 'active' : ''}`}
+          onClick={() => filterProjects('web')}
         >
-          Frontend
-        </button>
-        <button
-          className={`category-btn ${selectedCategory === 'backend' ? 'active' : ''}`}
-          onClick={() => filterProjects('backend')}
-        >
-          Backend
+          Web Dev
         </button>
         <button
           className={`category-btn ${selectedCategory === 'game' ? 'active' : ''}`}
