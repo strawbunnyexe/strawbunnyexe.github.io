@@ -27,10 +27,10 @@ const Contact = () => {
     // Sending email using EmailJS
     emailjs
       .sendForm(
-        'service_1r18bwl',      // Service ID from EmailJS
-        'template_pzrejlk',     // Template ID from EmailJS
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,      // Service ID from EmailJS
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,     // Template ID from EmailJS
         e.target,               // The form element
-        'tqp1z2SU-B3eK9bVt'          // User ID from EmailJS
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY         // User ID from EmailJS
       )
       .then(
         (result) => {

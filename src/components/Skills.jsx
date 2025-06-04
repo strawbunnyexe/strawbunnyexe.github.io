@@ -47,16 +47,16 @@ const Skills = () => {
         <h3>Frontend</h3>
         <div className="skills-row">
           <div className="skill">
-            <label htmlFor="html">HTML/CSS</label>
+            <label htmlFor="html">HTML & CSS</label>
             <progress id="html" value="90" max="100"></progress>
           </div>
           <div className="skill">
             <label htmlFor="js">JavaScript</label>
-            <progress id="js" value="75" max="100"></progress>
+            <progress id="js" value="90" max="100"></progress>
           </div>
           <div className="skill">
             <label htmlFor="js">TypeScript</label>
-            <progress id="js" value="75" max="100"></progress>
+            <progress id="js" value="80" max="100"></progress>
           </div>
           <div className="skill">
             <label htmlFor="react">React</label>
