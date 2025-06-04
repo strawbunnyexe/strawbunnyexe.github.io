@@ -1,6 +1,15 @@
   [
     {
       "id": 1,
+      "title": "Portfolio Website",
+      "description": "",
+      "category": "web",
+      "image": "/assets/images/portfolio-website.png",
+      "liveLink": "https://jenniferpichardo.com/",
+      "githubLink": "https://github.com/strawbunnyexe/strawbunnyexe.github.io"
+    },
+    {
+      "id": 2,
       "title": "GIF Finder",
       "description": "",
       "category": "web",
@@ -9,7 +18,7 @@
       "githubLink": "https://github.com/strawbunnyexe/gif-finder"
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "Audio Visualizer",
       "description": "",
       "category": "web",
@@ -19,7 +28,7 @@
       "githubLink": "https://github.com/strawbunnyexe/audio-visualizer"
     },
     {
-      "id": 3,
+      "id": 4,
       "title": "Fish Tank",
       "description": "",
       "category": "game",
@@ -28,7 +37,7 @@
       "githubLink": "https://github.com/strawbunnyexe/fish-tank"
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "HedgeBall",
       "description": "",
       "category": "game",
