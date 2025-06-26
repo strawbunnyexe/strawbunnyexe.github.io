@@ -15,34 +15,17 @@ const containerVariants = {
   },
 };
 
-const listVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
-    },
-  },
-};
-
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.4,
-      ease: 'easeOut',
-    },
+    transition: { duration: 0.4, ease: 'easeOut' },
   },
 };
+
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [statusMessage, setStatusMessage] = useState('');
 
   const handleChange = (e) => {
@@ -56,7 +39,6 @@ const Contact = () => {
     setFormData({ name: '', email: '', message: '' });
   };
 
-
   return (
     <motion.section
       id="contact"
@@ -67,10 +49,10 @@ const Contact = () => {
     >
       <motion.h2 variants={itemVariants}>Contact Me</motion.h2>
 
-      <motion.div className="contact-container" variants={itemVariants}>
+      <div className="contact-container">
         {/* Contact Form */}
-        <motion.div className="contact-form" variants={itemVariants}>
-          <h3>Send Me a Message!</h3>
+        <div className="contact-form">
+          <motion.h3 variants={itemVariants}>Send Me a Message!</motion.h3>
           <form
             onSubmit={handleSubmit}
             name="contact"
@@ -78,14 +60,13 @@ const Contact = () => {
             data-netlify="true"
             netlify-honeypot="bot-field"
           >
-            {/* Hidden input required by Netlify */}
+            {/* Netlify Hidden Fields */}
             <input type="hidden" name="form-name" value="contact" />
-
-            {/* Honeypot for spam protection */}
             <input type="hidden" name="bot-field" />
 
-            <label htmlFor="name">Name</label>
-            <input
+            <motion.label htmlFor="name" variants={itemVariants}>Name</motion.label>
+            <motion.input
+              variants={itemVariants}
               type="text"
               id="name"
               name="name"
@@ -95,8 +76,9 @@ const Contact = () => {
               placeholder="Your Name"
             />
 
-            <label htmlFor="email">Email</label>
-            <input
+            <motion.label htmlFor="email" variants={itemVariants}>Email</motion.label>
+            <motion.input
+              variants={itemVariants}
               type="email"
               id="email"
               name="email"
@@ -106,70 +88,87 @@ const Contact = () => {
               placeholder="Your Email"
             />
 
-            <label htmlFor="message">Message</label>
-            <textarea
+            <motion.label htmlFor="message" variants={itemVariants}>Message</motion.label>
+            <motion.textarea
+              variants={itemVariants}
               id="message"
               name="message"
               value={formData.message}
               onChange={handleChange}
               required
               placeholder="Your Message"
-            ></textarea>
+            ></motion.textarea>
 
-            <button type="submit" className="submit-btn">Send Message</button>
+            <motion.button
+              type="submit"
+              className="submit-btn"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Send Message
+            </motion.button>
           </form>
-      </motion.div>
 
-      {/* Social Links */}
-      <motion.div
-        className="social-links"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.4 }}
-        variants={listVariants}
-      >
-        <h3>Follow Me</h3>
-        <motion.ul variants={listVariants} className="social-list">
-          <motion.li variants={itemVariants}>
-            <a
-              href="https://github.com/strawbunnyexe"
-              className="social-icon"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="GitHub"
-            >
-              <i className="fab fa-github"></i> GitHub
-            </a>
-          </motion.li>
-          <motion.li variants={itemVariants}>
-            <a
-              href="https://linkedin.com/in/jennifer-pichardo"
-              className="social-icon"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="LinkedIn"
-            >
-              <i className="fab fa-linkedin"></i> LinkedIn
-            </a>
-          </motion.li>
-          <motion.li variants={itemVariants}>
-            <a
-              href="https://strawbunnyexe.itch.io/"
-              className="social-icon"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Itch.io"
-            >
-              <i className="fa-brands fa-itch-io"></i> Itch.io
-            </a>
-          </motion.li>
-        </motion.ul>
-      </motion.div>
+          {statusMessage && (
+            <motion.p className="status-message" variants={itemVariants}>
+              {statusMessage}
+            </motion.p>
+          )}
+        </div>
 
-    </motion.div>
-    </motion.section >
+        {/* Social Links */}
+        <motion.div
+          className="social-links"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+          variants={containerVariants}
+        >
+          <motion.h3 variants={itemVariants}>Follow Me</motion.h3>
+          <ul className="social-list">
+            <motion.li variants={itemVariants}>
+              <a
+                href="https://github.com/strawbunnyexe"
+                className="social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-github"></i> GitHub
+              </a>
+            </motion.li>
+            <motion.li variants={itemVariants}>
+              <a
+                href="https://linkedin.com/in/jennifer-pichardo"
+                className="social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fab fa-linkedin"></i> LinkedIn
+              </a>
+            </motion.li>
+            <motion.li variants={itemVariants}>
+              <a
+                href="https://strawbunnyexe.itch.io/"
+                className="social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fa-brands fa-itch-io"></i> Itch.io
+              </a>
+            </motion.li>
+          </ul>
+        </motion.div>
+      </div>
+
+      {/* Hidden static form to ensure Netlify detects it */}
+      <form name="contact" netlify hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <textarea name="message" />
+      </form>
+    </motion.section>
   );
 };
 
 export default Contact;
-
