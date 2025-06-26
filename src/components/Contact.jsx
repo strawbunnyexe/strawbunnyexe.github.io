@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import emailjs from 'emailjs-com';
 import { motion } from 'framer-motion';
 import './Contact.css';
 
@@ -53,19 +52,10 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs
-      .sendForm(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        e.target,
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-      )
-      .then(() => {
-        setStatusMessage('Message Sent Successfully!');
-        setFormData({ name: '', email: '', message: '' });
-      })
-      .catch(() => setStatusMessage('Error sending message. Please try again.'));
+    setStatusMessage('Message Sent! Thank you.');
+    setFormData({ name: '', email: '', message: '' });
   };
+
 
   return (
     <motion.section
@@ -81,7 +71,19 @@ const Contact = () => {
         {/* Contact Form */}
         <motion.div className="contact-form" variants={itemVariants}>
           <h3>Send Me a Message!</h3>
-          <form onSubmit={handleSubmit}>
+          <form
+            onSubmit={handleSubmit}
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+          >
+            {/* Hidden input required by Netlify */}
+            <input type="hidden" name="form-name" value="contact" />
+
+            {/* Honeypot for spam protection */}
+            <input type="hidden" name="bot-field" />
+
             <label htmlFor="name">Name</label>
             <input
               type="text"
@@ -116,57 +118,56 @@ const Contact = () => {
 
             <button type="submit" className="submit-btn">Send Message</button>
           </form>
-          {statusMessage && <p className="status-message">{statusMessage}</p>}
-        </motion.div>
-
-        {/* Social Links */}
-        <motion.div
-          className="social-links"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.4 }}
-          variants={listVariants}
-        >
-          <h3>Follow Me</h3>
-          <motion.ul variants={listVariants} className="social-list">
-            <motion.li variants={itemVariants}>
-              <a
-                href="https://github.com/strawbunnyexe"
-                className="social-icon"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="GitHub"
-              >
-                <i className="fab fa-github"></i> GitHub
-              </a>
-            </motion.li>
-            <motion.li variants={itemVariants}>
-              <a
-                href="https://linkedin.com/in/jennifer-pichardo"
-                className="social-icon"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="LinkedIn"
-              >
-                <i className="fab fa-linkedin"></i> LinkedIn
-              </a>
-            </motion.li>
-            <motion.li variants={itemVariants}>
-              <a
-                href="https://strawbunnyexe.itch.io/"
-                className="social-icon"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Itch.io"
-              >
-                <i className="fa-brands fa-itch-io"></i> Itch.io
-              </a>
-            </motion.li>
-          </motion.ul>
-        </motion.div>
-
       </motion.div>
-    </motion.section>
+
+      {/* Social Links */}
+      <motion.div
+        className="social-links"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.4 }}
+        variants={listVariants}
+      >
+        <h3>Follow Me</h3>
+        <motion.ul variants={listVariants} className="social-list">
+          <motion.li variants={itemVariants}>
+            <a
+              href="https://github.com/strawbunnyexe"
+              className="social-icon"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="GitHub"
+            >
+              <i className="fab fa-github"></i> GitHub
+            </a>
+          </motion.li>
+          <motion.li variants={itemVariants}>
+            <a
+              href="https://linkedin.com/in/jennifer-pichardo"
+              className="social-icon"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="LinkedIn"
+            >
+              <i className="fab fa-linkedin"></i> LinkedIn
+            </a>
+          </motion.li>
+          <motion.li variants={itemVariants}>
+            <a
+              href="https://strawbunnyexe.itch.io/"
+              className="social-icon"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Itch.io"
+            >
+              <i className="fa-brands fa-itch-io"></i> Itch.io
+            </a>
+          </motion.li>
+        </motion.ul>
+      </motion.div>
+
+    </motion.div>
+    </motion.section >
   );
 };
 
