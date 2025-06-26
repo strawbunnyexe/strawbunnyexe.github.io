@@ -2,7 +2,7 @@
     {
       "id": 1,
       "title": "Portfolio Website",
-      "description": "",
+      "description": "This very site was made by me using React + Vite!",
       "category": "web",
       "image": "/assets/images/portfolio-website.png",
       "liveLink": "https://jenniferpichardo.com/",
@@ -11,7 +11,7 @@
     {
       "id": 2,
       "title": "GIF Finder",
-      "description": "",
+      "description": "Web app to seach through GIPHY gifs",
       "category": "web",
       "image": "/assets/images/gif-finder.png",
       "liveLink": "https://jenniferpichardo.com/gif-finder/",
