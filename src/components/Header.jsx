@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
-import "./Header.css"; // Import CSS for styling
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import { motion, AnimatePresence } from 'framer-motion';
+import "./Header.css";
 
-const Header = () => {
+const Header = ({ theme, toggleTheme }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
 
-  // Toggle Menu State
+  // Toggle mobile nav menu
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen(prev => !prev);
   };
 
-  // Track Scroll Progress
+  // Track scroll progress
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -18,6 +21,7 @@ const Header = () => {
       const progress = (scrollTop / docHeight) * 100;
       setScrollProgress(progress);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -27,45 +31,51 @@ const Header = () => {
       {/* Scroll Indicator */}
       <div id="scroll-indicator" style={{ width: `${scrollProgress}%` }}></div>
 
-      {/* Navigation Bar */}
       <nav className="navbar">
-        {/* Logo */}
+        {/* Left Side - Logo */}
         <div className="logo">JP</div>
 
-        {/* Navigation Links */}
-        <ul className={`nav-links ${isMenuOpen ? "nav-active" : ""}`}>
-          <li>
-            <a href="#" onClick={() => setIsMenuOpen(false)}>Home</a>
-          </li>
-          <li>
-            <a href="#about" onClick={() => setIsMenuOpen(false)}>About</a>
-          </li>
-          <li>
-            <a href="#skills" onClick={() => setIsMenuOpen(false)}>Skills</a>
-          </li>
-          <li>
-            <a href="#projects" onClick={() => setIsMenuOpen(false)}>Projects</a>
-          </li>
-          <li>
-            <a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
-          </li>
-        </ul>
+        {/* Right Side - Links and Theme Toggle */}
+        <div className="nav-right">
+          <ul className={`nav-links ${isMenuOpen ? "nav-active" : ""}`}>
+            <li><a href="#" onClick={() => setIsMenuOpen(false)}>Home</a></li>
+            <li><a href="#about" onClick={() => setIsMenuOpen(false)}>About</a></li>
+            <li><a href="#skills" onClick={() => setIsMenuOpen(false)}>Skills</a></li>
+            <li><a href="#projects" onClick={() => setIsMenuOpen(false)}>Projects</a></li>
+            <li><a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
+          </ul>
 
-        {/* Hamburger Menu */}
-        <div
-          className={`hamburger ${isMenuOpen ? "is-active" : ""}`}
-          id="hamburger"
-          aria-label="Toggle navigation"
-          onClick={toggleMenu}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
+          {/* Theme Toggle Button */}
+          <button className="theme-toggle-button" onClick={toggleTheme} aria-label="Toggle theme">
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.span
+                key={theme}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.1, ease: 'easeOut' }}
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                whileTap={{ scale: 0.95 }}
+                className="theme-icon"
+              >
+                <FontAwesomeIcon icon={theme === 'light' ? faSun : faMoon} fixedWidth />
+              </motion.span>
+            </AnimatePresence>
+          </button>
+
+          {/* Hamburger Menu */}
+          <div
+            className={`hamburger ${isMenuOpen ? "is-active" : ""}`}
+            onClick={toggleMenu}
+            aria-label="Toggle navigation"
+          >
+            <span></span><span></span><span></span>
+          </div>
         </div>
       </nav>
+
     </header>
   );
 };
 
 export default Header;
-

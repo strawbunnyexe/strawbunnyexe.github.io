@@ -1,25 +1,24 @@
 /* Ensure body and html take up the full height of the viewport */
 html,
 body {
+  color: var(--text-color, #fff);
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: 'Press Start 2P', sans-serif;
   scroll-behavior: smooth;
   scroll-padding-top: 60px;
 }
 
-/* Parallax scrolling background */
 body {
-  background: linear-gradient(to bottom, #725AC1, #AA76B5, #CFFCE8);
-  background-attachment: fixed;
-  background-position: center center;
-  background-repeat: no-repeat;
-  font-family: 'Press Start 2P', sans-serif;
+  background-color: var(--bg-color);
+  font-family: 'Press Start 2P', cursive;
   min-height: 100%;
   position: relative;
+  color: var(--text-color);
+  overflow-x: hidden;
 }
 
-/* Simple pixel pattern using CSS */
 body::before {
   content: '';
   position: fixed;
@@ -27,24 +26,32 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 1px, transparent 1px, transparent 4px);
+  background:
+    repeating-linear-gradient(
+      0deg,
+      var(--texture-color) 0px,
+      var(--texture-color) 1px,
+      transparent 1px,
+      transparent 20px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--texture-color) 0px,
+      var(--texture-color) 1px,
+      transparent 1px,
+      transparent 20px
+    );
   pointer-events: none;
-  /* Prevent it from blocking interactions */
   z-index: -1;
 }
 
-/* Full-page soft retro overlay */
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  /* Ensures full width */
-  height: 100%;
-  /* Ensures full height */
-  background: rgba(0, 0, 0, 0.2);
-  /* Dark semi-transparent overlay */
-  z-index: -1;
-  /* Ensure the overlay stays behind content */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

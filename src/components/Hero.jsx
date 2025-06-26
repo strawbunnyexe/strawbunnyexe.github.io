@@ -1,46 +1,109 @@
 import React from "react";
-import "./Hero.css"; // Link to your CSS file 
+import { motion } from "framer-motion";
+import "./Hero.css";
+
+// Animation Variants
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.25,
+    },
+  },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+};
+
+const avatarVariants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 1, ease: "easeOut" },
+  },
+  hover: {
+    scale: 1.05,
+    rotate: [0, -1.5, 1.5, 0],
+    transition: {
+      duration: 0.6,
+      repeat: Infinity,
+      repeatType: "mirror",
+      ease: "easeInOut",
+    },
+  },
+};
+
+const arrowVariants = {
+  initial: { y: 0 },
+  animate: {
+    y: [0, 8, 0],
+    transition: {
+      duration: 1.2,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  },
+};
 
 const Hero = () => {
   return (
-    <section className="hero">
-      <div className="hero-content">
-        {/* Title */}
-        <h1 className="hero-title">Jennifer Pichardo</h1>
+    <section className="hero" id="hero">
+      <motion.div
+        className="hero-content"
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+      >
+        <motion.h1 className="hero-title" variants={fadeUp}>
+          Jennifer Pichardo
+        </motion.h1>
 
-        {/* Dialogue Box */}
-        <div className="dialogue-box">
+        <motion.div className="dialogue-box" variants={fadeUp}>
           <p>Web & Game Developer</p>
-        </div>
+        </motion.div>
 
-        {/* Buttons */}
-        <div className="hero-buttons">
+        <motion.div className="hero-buttons" variants={fadeUp}>
           <a
             href="/resume.pdf"
             className="hero-button resume-button"
-            id="resume-btn"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Resume
           </a>
-          <a href="#projects" className="hero-button work-button" id="work-btn">
+          <a href="#projects" className="hero-button work-button">
             View My Work
           </a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      {/* Avatar */}
-      <div className="hero-avatar">
+      <motion.div
+        className="hero-avatar"
+        variants={avatarVariants}
+        initial="hidden"
+        animate="show"
+        whileHover="hover"
+      >
         <img
           src="/assets/images/profile.jpg"
-          alt="Pixel Avatar"
+          alt="Pixel Avatar of Jennifer"
           className="avatar-img"
         />
-      </div>
+      </motion.div>
 
-      {/* Scroll Arrow */}
-      <div className="scroll-arrow">
-        <a href="#about" className="arrow">&#9660;</a>
-      </div>
+      <motion.div
+        className="scroll-arrow"
+        variants={arrowVariants}
+        initial="initial"
+        animate="animate"
+      >
+        <a href="#about" aria-label="Scroll to About Section">
+          <span className="arrow">&#9660;</span>
+        </a>
+      </motion.div>
     </section>
   );
 };

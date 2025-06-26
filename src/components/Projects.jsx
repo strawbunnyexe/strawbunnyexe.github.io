@@ -1,64 +1,82 @@
 import React, { useState, useEffect } from 'react';
 import ProjectCard from './ProjectCard.jsx';
+import { motion } from 'framer-motion';
+
 import './Projects.css';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // Fetch the JSON file containing project data
   useEffect(() => {
     fetch('data/projects.json')
-      .then((response) => response.json()) // Convert the response to JSON
-      .then((data) => setProjects(data)) // Set the projects in the state
-      .catch((error) => console.error('Error fetching the projects data:', error));
-  }, []); // Empty dependency array ensures this runs only once when the component mounts
+      .then((res) => res.json())
+      .then((data) => {
+        setProjects(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error('Error loading projects:', err);
+        setError('Could not load projects.');
+        setLoading(false);
+      });
+  }, []);
 
-  // Filter projects based on the selected category
-  const filterProjects = (category) => {
-    setSelectedCategory(category);
-  };
-
-  // Filtered projects based on selected category
   const filteredProjects = selectedCategory === 'all'
-  ? projects
-  : projects.filter(project => project.category === selectedCategory);
+    ? projects
+    : projects.filter(project => project.category === selectedCategory);
 
   return (
     <section id="projects">
-      <h2>My Projects</h2>
-    
-      {/* Category Filter Buttons */}
-      <div className="project-categories">
-      <button
-          className={`category-btn ${selectedCategory === 'all' ? 'active' : ''}`}
-          onClick={() => filterProjects('all')}
-        >
-          All
-        </button>
-        <button
-          className={`category-btn ${selectedCategory === 'web' ? 'active' : ''}`}
-          onClick={() => filterProjects('web')}
-        >
-          Web Dev
-        </button>
-        <button
-          className={`category-btn ${selectedCategory === 'game' ? 'active' : ''}`}
-          onClick={() => filterProjects('game')}
-        >
-          Game Dev
-        </button>
-      </div>
-    
-      {/* Projects Grid */}
-      <div className="projects-container">
-        {filteredProjects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+        viewport={{ once: true }}
+      >
+        My Projects
+      </motion.h2>
+
+      {/* Category Filter */}
+      <nav className="project-categories" aria-label="Project Categories">
+        {['all', 'web', 'game'].map((cat) => (
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className={`category-btn ${selectedCategory === cat ? 'active' : ''}`}
+            onClick={() => setSelectedCategory(cat)}
+            key={cat}
+          >
+            {cat === 'all' ? 'All' : cat === 'web' ? 'Web Dev' : 'Game Dev'}
+          </motion.button>
         ))}
-      </div>
+      </nav>
+
+      {/* Loading/Error */}
+      {loading && <p>Loading projects...</p>}
+      {error && <p className="error">{error}</p>}
+
+      {/* Projects Grid */}
+      {!loading && !error && (
+        <div className="projects-container">
+          {filteredProjects.map((project) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.3 }}
+              style={{ height: '100%' }}
+            >
+              <ProjectCard project={project} />
+            </motion.div>
+          ))}
+        </div>
+      )}
     </section>
   );
 };
 
 export default Projects;
-

@@ -1,0 +1,26 @@
+/* theme.css */
+:root {
+    --bg-color: #F6F1E7;
+    --text-color: #3A2E2B;
+    --card-bg: #fff;
+    --card-border: #8B6BB1;
+
+    --accent-pink: #C86C8E;
+    --accent-purple: #8B6BB1;
+    --highlight: #BFA87F;
+    --shadow-soft: rgba(0, 0, 0, 0.5);
+    --texture-color: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] {
+    --bg-color: #1F1A24;
+    --text-color: #F6F1E7;
+    --card-bg: #2A222F;
+    --card-border: #C86C8E;
+
+    --accent-pink: #C86C8E;
+    --accent-purple: #8B6BB1;
+    --highlight: #CBBF8D;
+    --shadow-soft: rgba(0, 0, 0, 0.4);
+    --texture-color: rgba(255, 255, 255, 0.15);
+}

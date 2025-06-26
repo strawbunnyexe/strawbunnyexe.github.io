@@ -1,127 +1,187 @@
-/* Projects Section Styles */
+/* Projects Section */
 #projects {
-  background-color: #F9F9FF;
-  /* Soft Lavender or Light Gray */
-  padding: 40px 20px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 20px 20px 40px;
+  text-align: center;
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  border-top: 2px solid var(--text-color);
+  border-bottom: 2px solid var(--text-color);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#projects h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--accent-purple);
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Category Buttons */
+.project-categories {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.category-btn {
+  font-family: 'Press Start 2P', sans-serif;
+  background: transparent;
+  color: var(--text-color);
+  font-size: 0.75rem;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.category-btn::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--accent-pink);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.category-btn:hover::after,
+.category-btn.active::after {
+  width: 100%;
+}
+
+/* Project Grid */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Project Card */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background-color: var(--card-bg, var(--bg-color));
+  border: 3px solid var(--accent-purple);
+  box-shadow: 6px 6px var(--accent-pink);
+  border-radius: 12px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  min-height: 480px;
+}
+
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 8px 8px var(--accent-pink);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border: 2px solid var(--highlight);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+/* Card Text */
+.project-card h3 {
+  font-size: 1.3rem;
+  color: var(--accent-purple);
+  margin-top: 0.5rem;
+}
+
+.project-card p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  margin: 1rem 0;
+  flex-grow: 1;
+}
+
+/* Buttons */
+.project-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.project-buttons .button {
+  font-family: 'Press Start 2P', sans-serif;
+  background-color: var(--accent-pink);
+  color: #fff;
+  padding: 10px 14px;
+  border: 2px solid var(--accent-purple);
   border-radius: 8px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    color: #fff;
-    text-align: center;
-  }
-  
-  #projects h2 {
-    font-size: 2rem;
-    text-transform: uppercase;
-    color: #9b59b6;
-    margin-bottom: 2rem;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
-  }
-  
-  .project-categories {
-    margin-bottom: 2rem;
-    display: flex;
-    flex-wrap: wrap; /* Allow buttons to wrap to the next line */
-    justify-content: center; /* Center the buttons horizontally */
-    gap: 10px; /* Add space between buttons */
-  }
-  
-  .category-btn {
-    font-family: 'Press Start 2P', sans-serif;
-    background-color: #8E44AD;
-    color: #fff;
-    font-size: 1rem;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 5px;
-    margin: 0 0.5rem;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .category-btn:hover {
-    background-color: #D4AC0D;
-  }
-  
-  .category-btn.active {
-    background-color: #d44f0d;
-  }
+  box-shadow: 3px 3px var(--accent-purple);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
 
-  .projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    justify-content: center;
-  }
-  
-  .project-card {
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    padding: 1.5rem;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .project-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .project-card h3 {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    color: #5f4b8b;
-  }
-  
-  .project-card p {
-    font-size: 1rem;
-    color: #7d6b9d;
-    margin: 1rem 0;
-  }
-  .project-buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-top: 10px;
-  }
-  .project-buttons .button {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #ff6fbf;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    margin-top: 1rem;
-  }
-  
-  .project-buttons .button:hover {
-    background-color: #9b59b6;
-  }  
+.project-buttons .button:hover {
+  background-color: var(--accent-purple);
+  color: #fff;
+  box-shadow: 4px 4px var(--highlight);
+  transform: translateY(-3px);
+}
 
-  .project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
-  }
+/* Error + Empty State */
+.error, .no-projects {
+  color: var(--text-color);
+  font-size: 1rem;
+  margin-top: 2rem;
+  opacity: 0.8;
+}
 
-  /* Small screen (mobile) */
-@media (max-width: 480px) {
-    .category-btn {
-      font-size: 0.9rem; /* Smaller font size for mobile */
-      padding: 6px 10px; /* Further adjust padding */
-    }
-    .project-categories {
-      flex-direction: column; /* Stack buttons vertically on mobile */
-      align-items: center;
-    }
-  }
-
-  /* Medium screen (tablets) */
+/* Responsive */
 @media (max-width: 768px) {
-    .category-btn {
-      font-size: 1rem; /* Smaller font size for tablets */
-      padding: 8px 15px; /* Adjust padding for smaller screens */
-    }
+  .category-btn {
+    font-size: 0.7rem;
+    padding: 10px;
   }
-  
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  #projects h2 {
+    font-size: 1.5rem;
+  }
+
+  .project-card {
+    padding: 1rem;
+    min-height: auto;
+  }
+
+  .project-card img {
+    height: 150px;
+  }
+
+  .project-buttons .button {
+    font-size: 0.75rem;
+    padding: 8px 12px;
+  }
+}

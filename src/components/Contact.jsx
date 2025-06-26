@@ -1,9 +1,44 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
-import "./Contact.css"
+import { motion } from 'framer-motion';
+import './Contact.css';
 
+const containerVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      when: 'beforeChildren',
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const listVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: 'easeOut',
+    },
+  },
+};
 const Contact = () => {
-  // State to manage the form data
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,59 +46,51 @@ const Contact = () => {
   });
   const [statusMessage, setStatusMessage] = useState('');
 
-  // Handle form input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Sending email using EmailJS
     emailjs
       .sendForm(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,      // Service ID from EmailJS
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,     // Template ID from EmailJS
-        e.target,               // The form element
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY         // User ID from EmailJS
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        e.target,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
       )
-      .then(
-        (result) => {
-          setStatusMessage('Message Sent Successfully!');
-          // Clear form data
-          setFormData({
-            name: '',
-            email: '',
-            message: '',
-          });
-        },
-        (error) => {
-          setStatusMessage('Error sending message. Please try again.');
-        }
-      );
+      .then(() => {
+        setStatusMessage('Message Sent Successfully!');
+        setFormData({ name: '', email: '', message: '' });
+      })
+      .catch(() => setStatusMessage('Error sending message. Please try again.'));
   };
 
   return (
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <div className="contact-container">
-        <div className="contact-form">
-          <h3>Send me a Message!</h3>
+    <motion.section
+      id="contact"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={containerVariants}
+    >
+      <motion.h2 variants={itemVariants}>Contact Me</motion.h2>
+
+      <motion.div className="contact-container" variants={itemVariants}>
+        {/* Contact Form */}
+        <motion.div className="contact-form" variants={itemVariants}>
+          <h3>Send Me a Message!</h3>
           <form onSubmit={handleSubmit}>
             <label htmlFor="name">Name</label>
             <input
               type="text"
               id="name"
               name="name"
-              placeholder="Your Name"
               value={formData.name}
               onChange={handleChange}
               required
+              placeholder="Your Name"
             />
 
             <label htmlFor="email">Email</label>
@@ -71,36 +98,77 @@ const Contact = () => {
               type="email"
               id="email"
               name="email"
-              placeholder="Your Email"
               value={formData.email}
               onChange={handleChange}
               required
+              placeholder="Your Email"
             />
 
             <label htmlFor="message">Message</label>
             <textarea
               id="message"
               name="message"
-              placeholder="Your Message"
               value={formData.message}
               onChange={handleChange}
               required
+              placeholder="Your Message"
             ></textarea>
 
             <button type="submit" className="submit-btn">Send Message</button>
           </form>
-          {statusMessage && <p>{statusMessage}</p>}
-        </div>
-        <div className="social-links">
+          {statusMessage && <p className="status-message">{statusMessage}</p>}
+        </motion.div>
+
+        {/* Social Links */}
+        <motion.div
+          className="social-links"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.4 }}
+          variants={listVariants}
+        >
           <h3>Follow Me</h3>
-          <ul>
-            <li><a href="https://github.com/strawbunnyexe" target="_blank" className="social-icon">GitHub</a></li>
-            <li><a href="https://linkedin.com/in/jennifer-pichardo" target="_blank" className="social-icon">LinkedIn</a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
+          <motion.ul variants={listVariants} className="social-list">
+            <motion.li variants={itemVariants}>
+              <a
+                href="https://github.com/strawbunnyexe"
+                className="social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="GitHub"
+              >
+                <i className="fab fa-github"></i> GitHub
+              </a>
+            </motion.li>
+            <motion.li variants={itemVariants}>
+              <a
+                href="https://linkedin.com/in/jennifer-pichardo"
+                className="social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="LinkedIn"
+              >
+                <i className="fab fa-linkedin"></i> LinkedIn
+              </a>
+            </motion.li>
+            <motion.li variants={itemVariants}>
+              <a
+                href="https://strawbunnyexe.itch.io/"
+                className="social-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Itch.io"
+              >
+                <i className="fa-brands fa-itch-io"></i> Itch.io
+              </a>
+            </motion.li>
+          </motion.ul>
+        </motion.div>
+
+      </motion.div>
+    </motion.section>
   );
 };
 
 export default Contact;
+

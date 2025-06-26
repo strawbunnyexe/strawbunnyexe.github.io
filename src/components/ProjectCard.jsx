@@ -2,19 +2,46 @@
 import React from 'react';
 
 const ProjectCard = ({ project }) => {
+  const { title, description, image, liveLink, githubLink } = project;
+
   return (
-    <div className="project-card">
-      <img src={project.image} alt={project.title} />
-      <h3>{project.title}</h3>
-      <p>{project.description}</p>
+    <div className='project-card'>
+      {/* Project Image */}
+      {image && (
+        <img
+          src={image}
+          alt={`${title} preview`}
+          loading="lazy"
+        />
+      )}
+
+      {/* Project Title */}
+      <h3>{title}</h3>
+
+      {/* Project Description */}
+      <p>{description}</p>
+
+      {/* Buttons */}
       <div className="project-buttons">
-        {project.liveLink && (
-          <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="button">
+        {liveLink && (
+          <a
+            href={liveLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button"
+            aria-label={`View live version of ${title}`}
+          >
             View Live
           </a>
         )}
-        {project.githubLink && (
-          <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="button">
+        {githubLink && (
+          <a
+            href={githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button"
+            aria-label={`View source code of ${title} on GitHub`}
+          >
             View Code
           </a>
         )}

@@ -1,183 +1,184 @@
 /* Hero Section */
 .hero {
-    position: relative;
-    height: calc(100vh - 60px);
-    padding-top: 60px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    overflow: hidden;
-    z-index: 0;
-    gap: 0 14px;
+  position: relative;
+  height: calc(100vh - 60px);
+  padding-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--text-color, #fff);
+  overflow: hidden;
+  z-index: 0;
+  gap: 0 14px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.05) 0px,
+    rgba(0, 0, 0, 0.05) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  z-index: 0;
 }
 
+/* Hero Title */
 .hero-title {
-    font-size: 1.8rem;
-    color: #fff;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid #fff;
-    animation: typing 3s steps(12), blink 0.7s step-end infinite;
-    padding: 12px;
-    margin: 20px 0;
+  font-size: 1.8rem;
+  color: var(--text-color, #fff);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid var(--text-color, #fff);
+  animation: typing 3s steps(12), blink 0.7s step-end infinite;
+  padding: 12px;
+  margin: 20px 0;
+  font-family: 'Press Start 2P', sans-serif;
+  
+  text-shadow: 1px 1px 0 #000;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
 }
 
 @keyframes blink {
-    50% {
-        border-color: transparent;
-    }
+  50% { border-color: transparent; }
 }
 
+/* Dialogue Box */
 .dialogue-box {
-    background: #333;
-    border: 4px solid #fff;
-    box-shadow: 4px 4px #5e2e7a;
-    padding: 15px 20px;
-    display: inline-block;
-    font-family: 'Press Start 2P', sans-serif;
-    color: #fff;
-    max-width: 80%;
-    margin: 20px 0;
+  background: var(--bg-color, #333);
+  border: 4px solid var(--text-color, #fff);
+  box-shadow: 4px 4px var(--accent-purple, #5e2e7a);
+  padding: 15px 20px;
+  display: inline-block;
+  font-family: 'Press Start 2P', sans-serif;
+  color: var(--text-color, #fff);
+  max-width: 80%;
+  margin: 20px 0;
+  font-size: 0.9rem;
+  backdrop-filter: brightness(1.2) contrast(1.1);
+  border: 2px solid var(--highlight);
 }
 
+/* Buttons */
 .hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
 }
 
 .hero-button {
-    background-color: #c084fc;
-    color: #fff;
-    padding: 10px 15px;
-    font-size: 1.1rem;
-    border: 3px solid #5e2e7a;
-    box-shadow: 4px 4px #5e2e7a;
-    transition: all 0.2s ease;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
-    margin-top: 20px;
+  position: relative;
+  background-color: var(--accent-purple); /* Or a bold pixel style color */
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  font-family: 'Press Start 2P', sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 3px solid var(--highlight);
+  border-radius: 6px;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3), 4px 4px var(--accent-pink);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 1;
+  overflow: hidden;
 }
 
 .hero-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 6px 6px #5e2e7a;
-    background-color: #5e2e7a;
+  transform: translateY(-3px);
+  box-shadow: 6px 6px var(--accent-purple, #5e2e7a);
+  background-color: var(--accent-pink, #5e2e7a);
+}
+.hero-button:active {
+  transform: translateY(2px);
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* Avatar */
 .hero-avatar img {
-    width: 200px;
-    height: 200px;
-    image-rendering: pixelated;
-    border: 3px solid #fff;
-    box-shadow: 0 0 10px #ff00ff;
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-
-/* Typing animation for hero title */
-@keyframes typing {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 100%;
-    }
+  width: 200px;
+  height: 200px;
+  image-rendering: pixelated;
+  border: 3px solid var(--highlight);
+  box-shadow: 0 0 12px var(--accent-pink);
+  border-radius: 8px;
 }
 
 /* Scroll Arrow */
 .scroll-arrow {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: bounce 1.5s infinite ease-in-out;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-decoration: none;
 }
 
 .scroll-arrow .arrow {
-    font-size: 2rem;
-    color: #ffdf00;
-    text-shadow: 2px 2px 0 #000;
-    cursor: pointer;
-    text-decoration: none;
+  font-size: 2rem;
+  color: var(--highlight, #ffdf00);
+  text-shadow: 2px 2px 0 #000;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-@keyframes bounce {
-
-    0%,
-    100% {
-        transform: translate(-50%, 0);
-    }
-
-    50% {
-        transform: translate(-50%, -10px);
-    }
-}
-
+/* Media Queries */
 @media (max-width: 768px) {
+  .hero-avatar img {
+    width: 150px;
+    height: 150px;
+  }
 
-    .hero-avatar img {
-        width: 150px;
-        height: 150px;
-    }
+  .hero-title {
+    font-size: 1rem;
+  }
 
-    .hero-title {
-        font-size: 1.5rem;
-    }
+  .dialogue-box {
+    font-size: 0.75rem;
+    padding: 10px;
+  }
 
-    .dialogue-box {
-        font-size: 0.8rem;
-        padding: 10px;
-    }
+  .hero-button {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+  }
 }
 
 @media (max-width: 480px) {
-    .hero {
-        height: auto;
-        padding-bottom: 50px;
-    }
+  .hero {
+    flex-direction: column;
+  }
 
-    .hero-title {
-        font-size: 1rem;
-    }
+  .hero-title {
+    font-size: 1.1rem;
+  }
 
-    .dialogue-box {
-        font-size: 0.6rem;
-    }
+  .dialogue-box {
+    font-size: 0.65rem;
+  }
 
-    .hero-avatar img {
-        width: 100px;
-        height: 100px;
-    }
+  .hero-avatar img {
+    width: 100px;
+    height: 100px;
+  }
 
-    .hero-button {
-        padding: 8px 10px;
-        font-size: 0.7rem;
-    }
+  .hero-button {
+    font-size: 0.7rem;
+    padding: 10px;
+  }
 
-    .scroll-arrow {
-        margin-top: 20px;
-    }
-
-    .scroll-arrow .arrow {
-        font-size: 20px;
-    }
+  .scroll-arrow .arrow {
+    font-size: 1.5rem;
+  }
 }
