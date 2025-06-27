@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import './Contact.css';
 
 const containerVariants = {
@@ -26,11 +26,43 @@ const itemVariants = {
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [statusMessage, setStatusMessage] = useState('');
+  const [isError, setIsError] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatusMessage('Sending...');
+    setIsError(false);
+
+    const response = await fetch('https://formspree.io/f/xwpbaeqg', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      setStatusMessage('Message sent successfully! Thank you.');
+      setIsError(false);
+      setFormData({ name: '', email: '', message: '' });
+    } else {
+      setStatusMessage('Something went wrong. Please try again.');
+      setIsError(true);
+    }
+
+    // Clear message after 2 seconds
+    setTimeout(() => {
+      setStatusMessage('');
+    }, 2000);
+  };
+
 
   return (
     <motion.section
@@ -46,16 +78,7 @@ const Contact = () => {
         {/* Contact Form */}
         <div className="contact-form">
           <motion.h3 variants={itemVariants}>Send Me a Message!</motion.h3>
-          <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-          >
-            {/* Netlify Hidden Fields */}
-            <input type="hidden" name="form-name" value="contact" />
-            <input type="hidden" name="bot-field" />
-
+          <form onSubmit={handleSubmit} noValidate>
             <motion.label htmlFor="name" variants={itemVariants}>Name</motion.label>
             <motion.input
               variants={itemVariants}
@@ -101,6 +124,21 @@ const Contact = () => {
               Send Message
             </motion.button>
           </form>
+
+          <AnimatePresence>
+            {statusMessage && (
+              <motion.p
+                key="status"
+                className="status-message"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                {statusMessage}
+              </motion.p>
+            )}
+          </AnimatePresence>
 
         </div>
 
@@ -148,12 +186,6 @@ const Contact = () => {
         </motion.div>
       </div>
 
-      {/* Hidden static form to ensure Netlify detects it */}
-      <form name="contact" netlify hidden>
-        <input type="text" name="name" />
-        <input type="email" name="email" />
-        <textarea name="message" />
-      </form>
     </motion.section>
   );
 };
