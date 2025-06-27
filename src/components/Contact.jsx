@@ -26,17 +26,10 @@ const itemVariants = {
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [statusMessage, setStatusMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setStatusMessage('Message Sent! Thank you.');
-    setFormData({ name: '', email: '', message: '' });
   };
 
   return (
@@ -54,7 +47,6 @@ const Contact = () => {
         <div className="contact-form">
           <motion.h3 variants={itemVariants}>Send Me a Message!</motion.h3>
           <form
-            onSubmit={handleSubmit}
             name="contact"
             method="POST"
             data-netlify="true"
@@ -110,11 +102,6 @@ const Contact = () => {
             </motion.button>
           </form>
 
-          {statusMessage && (
-            <motion.p className="status-message" variants={itemVariants}>
-              {statusMessage}
-            </motion.p>
-          )}
         </div>
 
         {/* Social Links */}
