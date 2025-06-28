@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -43,6 +44,7 @@ const Header = ({ theme, toggleTheme }) => {
             <li><a href="#skills" onClick={() => setIsMenuOpen(false)}>Skills</a></li>
             <li><a href="#projects" onClick={() => setIsMenuOpen(false)}>Projects</a></li>
             <li><a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
+            <li><Link to="/blog" onClick={() => setIsMenuOpen(false)}>Blog</Link></li>
           </ul>
 
           {/* Theme Toggle Button */}
