@@ -2,46 +2,45 @@
     {
       "id": 1,
       "title": "Portfolio Website",
-      "description": "This very site was made by me using React + Vite!",
+      "description": "My personal portfolio site built with React, Vite, and Framer Motion to showcase my work, skills, and aesthetic. Fully responsive with custom animations.",
       "category": "web",
-      "image": "/assets/images/portfolio-website.png",
-      "liveLink": "https://jenniferpichardo.com/",
+      "image": "/assets/images/portfolio-website.webp",
+      "liveLink": "#",
       "githubLink": "https://github.com/strawbunnyexe/strawbunnyexe.github.io"
     },
     {
       "id": 2,
       "title": "GIF Finder",
-      "description": "Web app to seach through GIPHY gifs",
+      "description": "A lightweight web app that uses the GIPHY API to search and display trending or keyword-based GIFs. Built with JavaScript and React Hooks for smooth UI updates.",
       "category": "web",
-      "image": "/assets/images/gif-finder.png",
+      "image": "/assets/images/gif-finder.webp",
       "liveLink": "https://jenniferpichardo.com/gif-finder/",
       "githubLink": "https://github.com/strawbunnyexe/gif-finder"
     },
     {
       "id": 3,
       "title": "Audio Visualizer",
-      "description": "",
+      "description": "A responsive browser-based visualizer that turns audio input into dynamic waveforms and colorful animations using the Web Audio API and Canvas.",
       "category": "web",
-      "image": "assets/images/audio-visualizer.png",
-      "link": "https://example.com/project2",
+      "image": "assets/images/audio-visualizer.webp",
       "liveLink": "http://jenniferpichardo.com/audio-visualizer/",
       "githubLink": "https://github.com/strawbunnyexe/audio-visualizer"
     },
     {
       "id": 4,
       "title": "Fish Tank",
-      "description": "",
+      "description": "A cozy aquarium sim where players can feed and watch fish interact. Developed with Unity, featuring dynamic movement and underwater ambiance as well as hand drawn sprites",
       "category": "game",
-      "image": "assets/images/fish-tank.jpg",
+      "image": "assets/images/fish-tank.webp",
       "liveLink": "http://jenniferpichardo.com/fish-tank/",
       "githubLink": "https://github.com/strawbunnyexe/fish-tank"
     },
     {
       "id": 5,
       "title": "HedgeBall",
-      "description": "",
+      "description": "A 3D puzzle game where players must rotate a maze in order to move a ball to its destination before the time runs out. Designed during a game jam using Unity and C#, receiving 1st place.",
       "category": "game",
-      "image": "assets/images/hedge.png",
+      "image": "assets/images/hedge.webp",
       "liveLink": "https://moonrift.itch.io/moonjam-class-6",
       "githubLink": "https://github.com/C0dingSteve/HedgeBall"
     }

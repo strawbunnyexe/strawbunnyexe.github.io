@@ -14,10 +14,14 @@ import './themes.css';
 import './App.css';
 
 function App() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(() => {
+    // Check for saved theme in localStorage or default to 'light'
+    return localStorage.getItem('theme') || 'light';
+  });
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme); // Save theme on change
   }, [theme]);
 
   const toggleTheme = () => {

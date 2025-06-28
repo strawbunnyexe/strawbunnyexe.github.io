@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faHtml5, faCss3Alt, faJsSquare, faReact,
-  faNodeJs, faPython, faUnity, faGitAlt
+  faHtml5, faJsSquare, faReact,
+  faNodeJs, faPython, faUnity
 } from '@fortawesome/free-brands-svg-icons';
 import { faDatabase, faCode, faCogs } from '@fortawesome/free-solid-svg-icons';
 
@@ -61,7 +61,7 @@ const Skills = () => {
         >
           <h3>{category}</h3>
           <div className="skills-row">
-            {items.map(({ name, id, level, icon }, i) => (
+            {items.map(({ name, id, level, icon }) => (
               <motion.div
                 className="skill"
                 key={id}

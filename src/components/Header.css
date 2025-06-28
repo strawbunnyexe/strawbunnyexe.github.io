@@ -96,6 +96,8 @@ header {
 
 /* Hamburger Menu */
 .hamburger {
+  border: 0;
+  background: none;
   display: none;
   flex-direction: column;
   cursor: pointer;
@@ -129,7 +131,7 @@ header {
 
 .nav-links {
     position: fixed;
-    top: 30px;
+    top: 55px;
     right: 0;
     flex-direction: column;
     background-color: var(--bg-color, #1e1e1e);

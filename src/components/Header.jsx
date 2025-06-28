@@ -64,13 +64,14 @@ const Header = ({ theme, toggleTheme }) => {
           </button>
 
           {/* Hamburger Menu */}
-          <div
+          <button
             className={`hamburger ${isMenuOpen ? "is-active" : ""}`}
             onClick={toggleMenu}
             aria-label="Toggle navigation"
+            aria-expanded={isMenuOpen}
           >
             <span></span><span></span><span></span>
-          </div>
+          </button>
         </div>
       </nav>
 

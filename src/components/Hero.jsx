@@ -88,8 +88,8 @@ const Hero = () => {
         whileHover="hover"
       >
         <img
-          src="/assets/images/profile.jpg"
-          alt="Pixel Avatar of Jennifer"
+          src="/assets/images/profile.webp"
+          alt="Avatar of Jennifer"
           className="avatar-img"
         />
       </motion.div>

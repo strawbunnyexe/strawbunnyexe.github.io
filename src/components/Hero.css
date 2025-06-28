@@ -132,6 +132,9 @@
   cursor: pointer;
   text-decoration: none;
 }
+#hero a{
+  text-decoration: none;
+}
 
 /* Media Queries */
 @media (max-width: 768px) {

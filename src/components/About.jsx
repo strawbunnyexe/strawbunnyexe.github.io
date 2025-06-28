@@ -62,7 +62,7 @@ const About = () => {
           transition={{ duration: 0.4, ease: "easeInOut" }}
         >
           <img
-            src="/assets/images/profile-pixel.png"
+            src="/assets/images/profile-pixel.webp"
             alt="Pixel avatar of Jennifer"
             className="avatar-img"
           />
