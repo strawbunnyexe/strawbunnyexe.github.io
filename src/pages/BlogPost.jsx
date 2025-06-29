@@ -1,39 +1,42 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { marked } from 'marked';
+import { parseMarkdown } from '../utils/parseMarkdown';
 import './Blog.css';
-
-const posts = {
-  'first-post': {
-    title: 'Welcome to My Magical Blog',
-    date: '2025-06-28',
-    content: `
-      <p>Hello curious soul! ✨</p>
-      <p>This is my first blog post, where I dive into my design inspirations and how I mix pixels and potions in my work!</p>
-    `
-  },
-  'second-post': {
-    title: 'Using Magic in React',
-    date: '2025-06-25',
-    content: `
-      <p>React isn’t just JavaScript — it’s a spellbook! 🔮 Let’s explore how I added sparkle animations and theme switching with ease.</p>
-    `
-  }
-};
 
 const BlogPost = () => {
   const { slug } = useParams();
-  const post = posts[slug];
+  const [html, setHtml] = useState('');
+  const [meta, setMeta] = useState(null);
 
-  if (!post) return <p style={{ padding: "2rem" }}>Post not found.</p>;
+useEffect(() => {
+  import(`../posts/${slug}.md?raw`)
+    .then((module) => {
+      const raw = module.default;
+      const { metadata, content } = parseMarkdown(raw);
+
+      setMeta(metadata);
+      setHtml(marked(content));
+    })
+    .catch((err) => {
+      console.error("Error loading post:", err);
+      setHtml('<p>Post not found.</p>');
+    });
+}, [slug]);
 
   return (
-    <section className='blog-container'>
-    <article className="blog-post">
-      <h1>{post.title}</h1>
-      <p className="post-date">{post.date}</p>
-      <div dangerouslySetInnerHTML={{ __html: post.content }} />
-    </article>
-    </section>
+    <main className="blog-post-container">
+      {meta ? (
+        <article className='blog-post'>
+          <h1>{meta.title}</h1>
+          <p className="post-date">{meta.date}</p>
+          <div dangerouslySetInnerHTML={{ __html: html }} className="post-content" />
+          <Link to="/blog" className="back-link">← Back to Blog</Link>
+        </article>
+      ) : (
+        <p>Loading...</p>
+      )}
+    </main>
   );
 };
 
