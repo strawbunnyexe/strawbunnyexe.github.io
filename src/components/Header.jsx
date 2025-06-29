@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useScroll } from '../context/ScrollContext';
 import "./Header.css";
 
 const Header = ({ theme, toggleTheme }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const { scrollToSection } = useScroll();
+  const location = useLocation();
 
-  // Toggle mobile nav menu
-  const toggleMenu = () => {
-    setIsMenuOpen(prev => !prev);
-  };
+  const toggleMenu = () => setIsMenuOpen(prev => !prev);
 
-  // Track scroll progress
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -27,27 +26,33 @@ const Header = ({ theme, toggleTheme }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavClick = (sectionId) => {
+    scrollToSection(sectionId);
+    setIsMenuOpen(false);
+  };
+
   return (
     <header>
-      {/* Scroll Indicator */}
       <div id="scroll-indicator" style={{ width: `${scrollProgress}%` }}></div>
 
       <nav className="navbar">
-        {/* Left Side - Logo */}
-        <div className="logo">JP</div>
+        {/* Logo */}
+        <div className="logo">
+          <Link to="/" onClick={() => handleNavClick("hero")} className="logo">JP</Link>
+        </div>
 
-        {/* Right Side - Links and Theme Toggle */}
+        {/* Nav Links */}
         <div className="nav-right">
           <ul className={`nav-links ${isMenuOpen ? "nav-active" : ""}`}>
-            <li><a href="#" onClick={() => setIsMenuOpen(false)}>Home</a></li>
-            <li><a href="#about" onClick={() => setIsMenuOpen(false)}>About</a></li>
-            <li><a href="#skills" onClick={() => setIsMenuOpen(false)}>Skills</a></li>
-            <li><a href="#projects" onClick={() => setIsMenuOpen(false)}>Projects</a></li>
-            <li><a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
+            <li><button onClick={() => handleNavClick("hero")}>Home</button></li>
+            <li><button onClick={() => handleNavClick("about")}>About</button></li>
+            <li><button onClick={() => handleNavClick("skills")}>Skills</button></li>
+            <li><button onClick={() => handleNavClick("projects")}>Projects</button></li>
+            <li><button onClick={() => handleNavClick("contact")}>Contact</button></li>
             <li><Link to="/blog" onClick={() => setIsMenuOpen(false)}>Blog</Link></li>
           </ul>
 
-          {/* Theme Toggle Button */}
+          {/* Theme Toggle */}
           <button className="theme-toggle-button" onClick={toggleTheme} aria-label="Toggle theme">
             <AnimatePresence mode="wait" initial={false}>
               <motion.span
@@ -65,7 +70,7 @@ const Header = ({ theme, toggleTheme }) => {
             </AnimatePresence>
           </button>
 
-          {/* Hamburger Menu */}
+          {/* Hamburger */}
           <button
             className={`hamburger ${isMenuOpen ? "is-active" : ""}`}
             onClick={toggleMenu}
@@ -76,9 +81,9 @@ const Header = ({ theme, toggleTheme }) => {
           </button>
         </div>
       </nav>
-
     </header>
   );
 };
 
 export default Header;
+

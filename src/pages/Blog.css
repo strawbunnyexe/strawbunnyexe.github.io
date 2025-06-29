@@ -1,0 +1,96 @@
+.blog-container {
+  height: 100vh;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 60px auto 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.blog-title {
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--accent-pink);
+  text-shadow: 1px 1px var(--shadow-soft);
+}
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.post-card {
+  padding: 1.5rem;
+  border: 3px solid var(--accent-purple);
+  border-radius: 10px;
+  background-color: var(--card-bg);
+  box-shadow: 0 0 10px var(--accent-purple);
+}
+
+.post-card h2 {
+  font-family: "Press Start 2P";
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent-pink);
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.blog-post {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 3px solid var(--accent-purple);
+  border-radius: 12px;
+  background-color: var(--card-bg, #1f1f1f);
+  color: var(--text-color);
+  box-shadow: 0 0 15px var(--accent-purple);
+  font-family: "Open Sans", sans-serif;
+}
+
+.blog-post h1 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--accent-pink);
+  text-shadow: 2px 2px 0 var(--shadow-soft);
+}
+
+.blog-post .post-date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.blog-post p {
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+.blog-post img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--accent-purple);
+}
+
+.blog-post a {
+  color: var(--accent-pink);
+  text-decoration: underline;
+}
+
+.blog-post a:hover {
+  text-shadow: 0 0 5px var(--accent-pink), 0 0 10px var(--accent-pink);
+}

@@ -45,13 +45,10 @@ body::before {
   z-index: -1;
 }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+::-webkit-scrollbar {
+  width: 10px;
 }
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+::-webkit-scrollbar-thumb {
+  background: var(--accent-pink);
+  border-radius: 8px;
 }

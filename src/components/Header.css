@@ -1,16 +1,16 @@
-/* Header Container */
+/* ========== Header ========== */
 header {
   position: fixed;
   top: 0;
   left: 0;
   height: 60px;
   width: 100%;
-  z-index: 1000;
   margin: 0;
   padding: 0;
+  z-index: 1000;
 }
 
-/* Scroll Indicator */
+/* ========== Scroll Indicator ========== */
 #scroll-indicator {
   position: fixed;
   top: 0;
@@ -21,9 +21,19 @@ header {
   box-shadow: 0 0 8px var(--highlight, #E3B505);
   z-index: 999;
   transition: width 0.2s ease-out;
+  animation: pulse-bar 2s infinite ease-in-out;
 }
 
-/* Navbar */
+@keyframes pulse-bar {
+  0%, 100% {
+    box-shadow: 0 0 8px var(--highlight, #E3B505);
+  }
+  50% {
+    box-shadow: 0 0 15px var(--highlight, #E3B505);
+  }
+}
+
+/* ========== Navbar ========== */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -45,31 +55,63 @@ header {
   font-size: 1.2rem;
   font-weight: bold;
   font-family: "Press Start 2P", cursive;
+  color: var(--text-color, #fff);
   text-shadow: 2px 2px 0 var(--shadow-soft);
+  transition: color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.logo:hover {
+  color: var(--accent-pink, #ffdf00);
+  transform: scale(1.05);
+}
+
+.logo,
+.logo:link,
+.logo:visited {
+  text-decoration: none;
   color: var(--text-color, #fff);
 }
 
-/* Navigation Links */
+.logo:hover,
+.logo:focus {
+  color: var(--accent-pink, #ffdf00);
+  transform: scale(1.05);
+  transition: color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+/* ========== Nav Links ========== */
 .nav-links {
   display: flex;
   gap: 1.5rem;
   list-style: none;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
-.nav-links li a {
-  text-decoration: none;
+/* Anchor & Button styles for links */
+.nav-links li a,
+.nav-links li button {
+  background: none;
+  border: none;
+  font: inherit;
   color: var(--text-color, #fff);
   font-size: 1rem;
+  cursor: pointer;
   text-shadow: 2px 2px 0 var(--shadow-soft);
+  text-decoration: none;
   transition: color 0.3s ease, text-shadow 0.3s ease;
+  outline: none;
 }
 
-.nav-links li a:hover {
+.nav-links li a:hover,
+.nav-links li button:hover {
   color: var(--accent-pink, #ffdf00);
   text-shadow: 2px 2px 0 var(--accent-purple, #ff00ff), 0 0 10px var(--accent-purple, #ff00ff);
 }
 
-/* Theme Toggle Button */
+/* ========== Theme Toggle ========== */
 .theme-toggle-button {
   background: none;
   border: none;
@@ -79,8 +121,13 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color 0.3s ease;
   padding: 8px;
+  transition: color 0.3s ease;
+}
+
+.theme-toggle-button:hover {
+  color: var(--highlight);
+  transform: scale(1.1);
 }
 
 .icon-wrapper {
@@ -89,19 +136,14 @@ header {
   text-align: center;
 }
 
-.theme-toggle-button:hover {
-  color: var(--highlight);
-  transform: scale(1.1);
-}
-
-/* Hamburger Menu */
+/* ========== Hamburger Menu ========== */
 .hamburger {
-  border: 0;
-  background: none;
   display: none;
+  border: none;
+  background: none;
   flex-direction: column;
-  cursor: pointer;
   gap: 5px;
+  cursor: pointer;
 }
 
 .hamburger span {
@@ -112,7 +154,7 @@ header {
   transition: all 0.3s ease-in-out;
 }
 
-/* Hamburger Animation */
+/* Hamburger Active Animation */
 .hamburger.is-active span:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
@@ -123,13 +165,13 @@ header {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Responsive Menu */
+/* ========== Responsive Styles ========== */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
   }
 
-.nav-links {
+  .nav-links {
     position: fixed;
     top: 55px;
     right: 0;
@@ -146,6 +188,7 @@ header {
   .nav-links.nav-active {
     transform: translateX(0);
   }
+
   .nav-right {
     gap: 0.5rem;
   }
