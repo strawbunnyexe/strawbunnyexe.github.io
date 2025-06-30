@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { Link, useLocation } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useScroll } from '../context/ScrollContext';
+import PropTypes from 'prop-types';
 import "./Header.css";
 
 const Header = ({ theme, toggleTheme }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const { scrollToSection } = useScroll();
-  const location = useLocation();
 
   const toggleMenu = () => setIsMenuOpen(prev => !prev);
 
@@ -87,3 +87,8 @@ const Header = ({ theme, toggleTheme }) => {
 
 export default Header;
 
+
+Header.propTypes = {
+  theme: PropTypes.string.isRequired,
+  toggleTheme: PropTypes.func.isRequired,
+};

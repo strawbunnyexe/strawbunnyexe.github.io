@@ -1,4 +1,7 @@
-/* Hero Section */
+/* ================================
+   Hero Section Base
+================================= */
+
 .hero {
   position: relative;
   height: calc(100vh - 60px);
@@ -10,9 +13,10 @@
   text-align: center;
   color: var(--text-color, #fff);
   overflow: hidden;
-  z-index: 0;
   gap: 0 14px;
+  z-index: 0;
 }
+
 .hero::before {
   content: '';
   position: absolute;
@@ -29,19 +33,21 @@
   z-index: 0;
 }
 
-/* Hero Title */
+/* ================================
+   Hero Title Animation
+================================= */
+
 .hero-title {
   font-size: 1.8rem;
+  font-family: 'Press Start 2P', sans-serif;
   color: var(--text-color, #fff);
+  padding: 12px;
+  margin: 20px 0;
+  text-shadow: 1px 1px 0 #000;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid var(--text-color, #fff);
   animation: typing 3s steps(12), blink 0.7s step-end infinite;
-  padding: 12px;
-  margin: 20px 0;
-  font-family: 'Press Start 2P', sans-serif;
-  
-  text-shadow: 1px 1px 0 #000;
 }
 
 @keyframes typing {
@@ -53,23 +59,28 @@
   50% { border-color: transparent; }
 }
 
-/* Dialogue Box */
+/* ================================
+   Dialogue Box
+================================= */
+
 .dialogue-box {
   background: var(--bg-color, #333);
-  border: 4px solid var(--text-color, #fff);
+  color: var(--text-color, #fff);
+  border: 2px solid var(--highlight);
   box-shadow: 4px 4px var(--accent-purple, #5e2e7a);
   padding: 15px 20px;
   display: inline-block;
-  font-family: 'Press Start 2P', sans-serif;
-  color: var(--text-color, #fff);
   max-width: 80%;
   margin: 20px 0;
+  font-family: 'Press Start 2P', sans-serif;
   font-size: 0.9rem;
   backdrop-filter: brightness(1.2) contrast(1.1);
-  border: 2px solid var(--highlight);
 }
 
-/* Buttons */
+/* ================================
+   Hero Buttons
+================================= */
+
 .hero-buttons {
   display: flex;
   justify-content: center;
@@ -80,33 +91,37 @@
 
 .hero-button {
   position: relative;
-  background-color: var(--accent-purple); /* Or a bold pixel style color */
-  color: #fff;
-  padding: 12px 20px;
+  z-index: 1;
+  cursor: pointer;
+  overflow: hidden;
   font-size: 1.1rem;
   font-family: 'Press Start 2P', sans-serif;
   text-transform: uppercase;
   text-decoration: none;
+  background-color: var(--accent-purple);
+  color: #fff;
+  padding: 12px 20px;
   border: 3px solid var(--highlight);
   border-radius: 6px;
   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3), 4px 4px var(--accent-pink);
   transition: all 0.3s ease;
-  cursor: pointer;
-  z-index: 1;
-  overflow: hidden;
 }
 
 .hero-button:hover {
   transform: translateY(-3px);
+  background-color: var(--accent-pink, #ff7ec8);
   box-shadow: 6px 6px var(--accent-purple, #5e2e7a);
-  background-color: var(--accent-pink, #5e2e7a);
 }
+
 .hero-button:active {
   transform: translateY(2px);
   box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Avatar */
+/* ================================
+   Hero Avatar
+================================= */
+
 .hero-avatar img {
   width: 200px;
   height: 200px;
@@ -116,7 +131,10 @@
   border-radius: 8px;
 }
 
-/* Scroll Arrow */
+/* ================================
+   Scroll Arrow
+================================= */
+
 .scroll-arrow {
   position: absolute;
   bottom: 20px;
@@ -132,11 +150,15 @@
   cursor: pointer;
   text-decoration: none;
 }
-#hero a{
+
+#hero a {
   text-decoration: none;
 }
 
-/* Media Queries */
+/* ================================
+   Responsive Design
+================================= */
+
 @media (max-width: 768px) {
   .hero-avatar img {
     width: 150px;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 
 import Header from './components/Header.jsx';
@@ -7,7 +7,7 @@ import Home from './pages/Home.jsx';
 import Blog from './pages/Blog.jsx';
 import BlogPost from './pages/BlogPost';
 import NotFound from './pages/NotFound.jsx';
-
+import ScrollToTop from './components/ScrollToTop';
 import { ScrollContext } from './context/ScrollContext.jsx';
 
 import './themes.css';
@@ -47,6 +47,7 @@ function App() {
 
   return (
     <ScrollContext.Provider value={{ scrollToSection }}>
+      <ScrollToTop />
       <div className="App">
         <Header theme={theme} toggleTheme={toggleTheme} />
         <Routes>

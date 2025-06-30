@@ -1,14 +1,17 @@
-/* Projects Section */
+/* ================================
+   Projects Section
+================================= */
+
 #projects {
   background-color: var(--bg-color);
   color: var(--text-color);
   padding: 20px 20px 40px;
   text-align: center;
+  border-top: 2px solid var(--text-color);
+  border-bottom: 2px solid var(--text-color);
   animation: fadeInUp 0.8s ease forwards;
   opacity: 0;
   transform: translateY(20px);
-  border-top: 2px solid var(--text-color);
-  border-bottom: 2px solid var(--text-color);
 }
 
 @keyframes fadeInUp {
@@ -26,7 +29,10 @@
   text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* Category Buttons */
+/* ================================
+   Category Buttons
+================================= */
+
 .project-categories {
   margin-bottom: 2rem;
   display: flex;
@@ -37,24 +43,24 @@
 
 .category-btn {
   font-family: 'Press Start 2P', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  padding: 0.8rem 1.2rem;
   background: transparent;
   color: var(--text-color);
-  font-size: 0.75rem;
-  padding: 0.8rem 1.2rem;
   border: none;
-  position: relative;
   cursor: pointer;
-  text-transform: uppercase;
+  position: relative;
   transition: color 0.3s ease;
 }
 
 .category-btn::after {
   content: '';
   position: absolute;
+  left: 50%;
+  bottom: 0;
   width: 0%;
   height: 3px;
-  bottom: 0;
-  left: 50%;
   background-color: var(--accent-pink);
   transition: all 0.3s ease;
   transform: translateX(-50%);
@@ -65,7 +71,10 @@
   width: 100%;
 }
 
-/* Project Grid */
+/* ================================
+   Project Grid Layout
+================================= */
+
 .projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -73,20 +82,22 @@
   align-items: stretch;
 }
 
-/* Project Card */
+/* ================================
+   Project Card
+================================= */
+
 .project-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1.5rem;
   background-color: var(--card-bg, var(--bg-color));
   border: 3px solid var(--accent-purple);
   box-shadow: 6px 6px var(--accent-pink);
   border-radius: 12px;
+  padding: 1.5rem;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   min-height: 480px;
 }
-
 
 .project-card:hover {
   transform: translateY(-6px);
@@ -102,7 +113,10 @@
   margin-bottom: 1rem;
 }
 
-/* Card Text */
+/* ================================
+   Card Text
+================================= */
+
 .project-card h3 {
   font-size: 1.3rem;
   color: var(--accent-purple);
@@ -117,50 +131,60 @@
   flex-grow: 1;
 }
 
-/* Buttons */
+/* ================================
+   Buttons
+================================= */
+
 .project-buttons {
   display: flex;
   justify-content: center;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 10px;
   margin-top: 1rem;
 }
 
 .project-buttons .button {
   font-family: 'Press Start 2P', sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  text-decoration: none;
   background-color: var(--accent-pink);
   color: #fff;
   padding: 10px 14px;
   border: 2px solid var(--accent-purple);
   border-radius: 8px;
   box-shadow: 3px 3px var(--accent-purple);
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  text-decoration: none;
   transition: all 0.2s ease;
 }
 
 .project-buttons .button:hover {
   background-color: var(--accent-purple);
-  color: #fff;
   box-shadow: 4px 4px var(--highlight);
   transform: translateY(-3px);
 }
 
-/* Error + Empty State */
-.error, .no-projects {
+/* ================================
+   Error & Empty State
+================================= */
+
+.error,
+.no-projects {
   color: var(--text-color);
   font-size: 1rem;
   margin-top: 2rem;
   opacity: 0.8;
 }
 
-/* Responsive */
+/* ================================
+   Responsive Tweaks
+================================= */
+
 @media (max-width: 768px) {
   .category-btn {
     font-size: 0.7rem;
     padding: 10px;
   }
+
   .projects-container {
     grid-template-columns: 1fr;
   }

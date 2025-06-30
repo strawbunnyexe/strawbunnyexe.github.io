@@ -1,23 +1,32 @@
-/* Ensure body and html take up the full height of the viewport */
-html,
-body {
-  color: var(--text-color, #fff);
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: 'Press Start 2P', sans-serif;
+/* Smooth transitions for theme switching */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
   scroll-behavior: smooth;
   scroll-padding-top: 60px;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 50px;
+  }
 }
 
 body {
-  background-color: var(--bg-color);
-  font-family: 'Press Start 2P', cursive;
   min-height: 100%;
-  position: relative;
-  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  color: var(--text-color, #fff);
+  background-color: var(--bg-color, #1e1e1e);
+  font-family: 'Press Start 2P', system-ui, sans-serif;
   overflow-x: hidden;
+  position: relative;
+  font-size: 0.75rem;
 }
+
+/* =========================================
+    Background Texture Grid
+========================================= */
 
 body::before {
   content: '';
@@ -26,29 +35,56 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
+  pointer-events: none;
+  z-index: -1;
+
   background:
     repeating-linear-gradient(
       0deg,
-      var(--texture-color) 0px,
-      var(--texture-color) 1px,
+      var(--texture-color, rgba(255, 255, 255, 0.05)) 0px,
+      var(--texture-color, rgba(255, 255, 255, 0.05)) 1px,
       transparent 1px,
       transparent 20px
     ),
     repeating-linear-gradient(
       90deg,
-      var(--texture-color) 0px,
-      var(--texture-color) 1px,
+      var(--texture-color, rgba(255, 255, 255, 0.05)) 0px,
+      var(--texture-color, rgba(255, 255, 255, 0.05)) 1px,
       transparent 1px,
       transparent 20px
     );
-  pointer-events: none;
-  z-index: -1;
 }
+
+/* =========================================
+   Scrollbar Styles (WebKit)
+========================================= */
 
 ::-webkit-scrollbar {
   width: 10px;
+  height: 10px;
 }
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color, #1e1e1e);
+}
+
 ::-webkit-scrollbar-thumb {
-  background: var(--accent-pink);
-  border-radius: 8px;
+  background-color: var(--highlight, #E3B505);
+  border-radius: 6px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  box-shadow: inset 0 0 4px var(--highlight, #E3B505);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent-pink, #ffdf00);
+}
+
+/* =========================================
+   Scrollbar Styles (Firefox)
+========================================= */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--highlight, #E3B505) var(--bg-color, #1e1e1e);
 }

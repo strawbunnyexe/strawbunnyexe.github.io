@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Contact.css';
 
@@ -129,7 +129,7 @@ const Contact = () => {
             {statusMessage && (
               <motion.p
                 key="status"
-                className="status-message"
+                className={`status-message ${isError ? 'error' : 'success'}`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}

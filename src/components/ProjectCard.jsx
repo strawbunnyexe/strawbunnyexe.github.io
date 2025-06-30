@@ -1,5 +1,4 @@
-// ProjectCard.js
-import React from 'react';
+import PropTypes from 'prop-types';
 
 const ProjectCard = ({ project }) => {
   const { title, description, image, liveLink, githubLink } = project;
@@ -51,3 +50,13 @@ const ProjectCard = ({ project }) => {
 };
 
 export default ProjectCard;
+
+ProjectCard.propTypes = {
+  project: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    image: PropTypes.string,
+    liveLink: PropTypes.string,
+    githubLink: PropTypes.string,
+  }).isRequired,
+};
