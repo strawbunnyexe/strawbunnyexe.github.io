@@ -11,7 +11,7 @@
     {
       "id": 2,
       "title": "GIF Finder",
-      "description": "A lightweight web app that uses the GIPHY API to search and display trending or keyword-based GIFs. Built with JavaScript and React Hooks for smooth UI updates.",
+      "description": "A lightweight web app that uses the GIPHY API to search and display trending or keyword-based GIFs. Built with JavaScript and React Hooks for responsive UI updates and smooth functionality.",
       "category": "web",
       "image": "/assets/images/gif-finder.webp",
       "liveLink": "https://jenniferpichardo.com/gif-finder/",
